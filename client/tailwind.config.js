@@ -4,7 +4,19 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // Add Custom Fonts Here
+        display: 'Oswald, ui-serif', // Adds a new `font-display` class
+      },
+      colors: {
+        // Add Custom Colors Here // 
+        primary: "",
+        secondary: "",
+        accent: "",
+        error: "",
+      },
+    },
   },
   plugins: [],
 }

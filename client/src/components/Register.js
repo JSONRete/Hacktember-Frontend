@@ -1,13 +1,16 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
-import { UserContext } from "";
+import { UserContext } from "../context/UserProvider";
+import { ErrorContext } from "../context/ErrorProvider";
 import * as yup from "yup";
+import Error from 'components/Error.js'
 
 const Register = () => {
   const history = useHistory();
-  const { handleRegister, handleLogin, isLogged } = useContext(UserContext);
-  const { user } = UserContext(UserContext);
+  const { handleRegister, handleLogin, isLoggedIn } = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const { error } = useContext(ErrorContext)
   const pwRegEx =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   const registerSchema = yup.object().shape({
@@ -51,7 +54,7 @@ const Register = () => {
     </h4>
 
     <form onSubmit={formik.handleSubmit} width="25%">
-      <TextField
+      <input
         label="Username"
         variant="outlined"
         fullWidth
@@ -63,7 +66,7 @@ const Register = () => {
         error={formik.touched.username && Boolean(formik.errors.username)}
         helperText={formik.touched.username && formik.errors.username}
       />
-      <TextField
+      <input
         label="Password"
         variant="outlined"
         fullWidth
@@ -78,7 +81,7 @@ const Register = () => {
       />
 
       {!isLoggedIn && (
-        <TextField
+        <input
           label="Email"
           variant="outlined"
           fullWidth
@@ -92,14 +95,14 @@ const Register = () => {
           helperText={formik.touched.email && formik.errors.email}
         />
       )}
-      <Button 
+      <button 
         variant="contained" 
         color="neutral" 
         type="submit"
         sx={{ mt: 2}}
       >
           {isLoggedIn ? "Login" : "Create"}{" "}
-        </Button>
+        </button>
     </form>
     <FormControlLabel
       control={<Switch checked={isLoggedIn} onChange={handleLogin} />}

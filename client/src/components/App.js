@@ -11,7 +11,7 @@ import About from '../components/About';
 function App() {
   return (
     <Router>
-      {/* <Nav /> */}
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} /> {/* Specify your routes here */}
         <Route path="/courses" element={<Courses />} />

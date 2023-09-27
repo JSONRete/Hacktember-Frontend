@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
+import { ErrorContext } from './ErrorProvider';
 
 const UserContext = createContext();
 
@@ -19,7 +20,7 @@ const UserProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchUser = () => {
-          fetch("/authenticate").then((res) => {
+          fetch("/check_session").then((res) => {
             if (res.ok) {
               res.json().then(setUser);
             } else {
@@ -40,7 +41,7 @@ const UserProvider = ({ children }) => {
     }
 
     const handleRegister = ( values, resetForm, history) => {
-        const { username, password} = values;
+        const { email, password} = values;
         const url = isLoggedIn ? '/login' : '/signup';
         fetch(url, {
             method: "POST",

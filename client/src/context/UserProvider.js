@@ -1,5 +1,4 @@
 import { useState, useEffect, createContext, useContext } from 'react'
-import { useNavigation } from 'react-router-dom'
 import { ErrorContext } from './ErrorProvider';
 
 const UserContext = createContext();

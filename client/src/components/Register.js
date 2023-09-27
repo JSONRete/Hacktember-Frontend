@@ -17,6 +17,7 @@ import {
   TextField,
 } from "@mui/material";
 import { Error } from "./Error";
+import Loading from "./Loading"
 
 const Register = () => {
   const history = useNavigate();
@@ -61,6 +62,7 @@ const Register = () => {
   }
   return (
     <Container>
+      <Loading />
       <Box mt={5} display="flex" flexDirection="column" alignItems="center">
         <Typography variant="h4" gutterBottom>
           Please Login or Signup!

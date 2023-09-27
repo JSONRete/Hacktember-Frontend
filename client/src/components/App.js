@@ -5,7 +5,7 @@ import Nav from '../components/Nav';
 import Home from '../components/Home'; // Import your route components here
 import Courses from '../components/Courses';
 import Contact from '../components/Contact';
-import Register from './Register';
+import Register from '../components/Register';
 import About from '../components/About';
 
 function App() {

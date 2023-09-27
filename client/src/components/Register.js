@@ -93,25 +93,7 @@ const Register = () => {
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
-
-          {!isLoggedIn && (
-            <TextField
-              label="Email"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-              name="email"
-              type="email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={formik.touched.email && formik.errors.email}
-            />
-          )}
           <Button
-            variant="contained"
-            color="neutral"
             type="submit"
             sx={{ mt: 2 }}
           >

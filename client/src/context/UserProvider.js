@@ -7,7 +7,6 @@ const UserContext = createContext();
 const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const history = useNavigation();
     const { setError } = useContext(ErrorContext);
 
     const handleLogin = () => {
@@ -35,7 +34,6 @@ const UserProvider = ({ children }) => {
         fetch('/logout', { method: 'DELETE'}).then((res) => {
             if (res.ok) {
                 updateUser(null);
-                history('/check_session')
             }
         })
     }

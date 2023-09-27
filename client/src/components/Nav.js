@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, Routes, Route, NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-function Nav(){
-
+function Nav() {
   return (
     <div className="App bg-slate-200 p-8 flex m-5 justify-end space-x-6">
       <Link to="/">
@@ -13,7 +12,7 @@ function Nav(){
       <div>
         <Link
           className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
-          to="courses"
+          to="/courses" 
         >
           Courses
         </Link>
@@ -21,7 +20,7 @@ function Nav(){
       <div>
         <Link
           className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
-          to="contact"
+          to="/contact" 
         >
           Contact
         </Link>
@@ -29,7 +28,7 @@ function Nav(){
       <div>
         <Link
           className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
-          to="login"
+          to="/login" 
         >
           Login
         </Link>
@@ -37,16 +36,21 @@ function Nav(){
       <div>
         <Link
           className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
-          to="about"
+          to="/about" 
         >
           About Us
         </Link>
       </div>
-      <button class="bg-red-700 text-white hover:bg-blue-600 rounded-xl p-2">
+      <button className="bg-red-700 text-white hover:bg-blue-600 rounded-xl p-2">
         Logout
       </button>
     </div>
   );
-};
+}
 
 export default Nav;
+
+
+
+
+

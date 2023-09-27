@@ -62,7 +62,6 @@ const Register = () => {
   }
   return (
     <Container>
-      <Loading />
       <Box mt={5} display="flex" flexDirection="column" alignItems="center">
         <Typography variant="h4" gutterBottom>
           Please Login or Signup!

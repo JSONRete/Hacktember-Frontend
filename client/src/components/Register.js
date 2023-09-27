@@ -1,11 +1,11 @@
+import React from "react";
 import { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import * as yup from "yup";
+import * as Yup from "yup";
 
 import { UserContext } from "../context/UserProvider";
 import { ErrorContext } from "../context/ErrorProvider";
-import Error from "components/Error.js";
 
 import Typography from "@mui/material/Typography";
 import {
@@ -16,19 +16,19 @@ import {
   Switch,
   TextField,
 } from "@mui/material";
+import { Error } from "./Error";
 
 const Register = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const { handleRegister, handleLogin, isLoggedIn } = useContext(UserContext);
   const { user } = useContext(UserContext);
   const { error } = useContext(ErrorContext);
   const pwRegEx =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-  const registerSchema = yup.object().shape({
-    username: yup.string().required("Username is Required").min(5).max(30),
-    password: yup
-      .string()
+  const registerSchema = Yup.object().shape({
+    username: Yup.string().required("Username is Required").min(5).max(30),
+    password: Yup.string()
       .required("Password is required")
       .matches(
         pwRegEx,
@@ -36,14 +36,14 @@ const Register = () => {
       ),
   });
 
-  const signSinSchema = yup.object().shape({
-    username: yup.string().required("Username is Required").min(5).max(30),
-    password: yup.string().required("Password is Required").min(8).max(100),
+  const signSinSchema = Yup.object().shape({
+    email: Yup.string().email().required("Email is Required").min(5).max(30),
+    password: Yup.string().required("Password is Required").min(8).max(100),
   });
 
   const formik = useFormik({
     initialValues: {
-      username: "",
+      email: "",
       password: "",
     },
     validationSchema: isLoggedIn ? registerSchema : signSinSchema,
@@ -51,7 +51,7 @@ const Register = () => {
       resetForm();
       const ok = handleRegister(values);
       if (ok) {
-        history.push("/");
+        history("/");
       }
     },
   });
@@ -115,17 +115,17 @@ const Register = () => {
             type="submit"
             sx={{ mt: 2 }}
           >
-            {isLoggedIn ? "Login" : "Create"}{" "}
+            {isLoggedIn ? "Login" : "Sign up"}{" "}
           </Button>
         </Box>
         <FormControlLabel
           control={<Switch checked={isLoggedIn} onChange={handleLogin} />}
           label={
-            isLoggedIn ? "Need a new account?" : "Already have an account?"
+            isLoggedIn ? "Don't have an account?" : "Already have an account?"
           }
         />
       </Box>
-      {error ? <Error /> : <></>}
+      {error ? <Error/> : <></>}
     </Container>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import { useContext, useEffect, useState } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import { ErrorContext } from "../context/ErrorProvider";
 
 export const Error = () => {
   const { error, setError } = useContext(ErrorContext);

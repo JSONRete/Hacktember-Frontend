@@ -1,11 +1,13 @@
 import React from "react";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import { UserContext } from "../context/UserProvider";
 import { ErrorContext } from "../context/ErrorProvider";
+
+import { IoIosArrowBack } from "react-icons/io";
 
 import Typography from "@mui/material/Typography";
 import {
@@ -17,7 +19,6 @@ import {
   TextField,
 } from "@mui/material";
 import { Error } from "./Error";
-import Loading from "./Loading"
 
 const Register = () => {
   const history = useNavigate();
@@ -62,7 +63,13 @@ const Register = () => {
   }
   return (
     <Container>
+      <Link>
+      <span className="">
+      <IoIosArrowBack/>Back
+      </span>
+      </Link>
       <Box mt={5} display="flex" flexDirection="column" alignItems="center">
+      <img src="waving-hand.png" alt="" width={200} height={200}/>
         <Typography variant="h4" gutterBottom>
           Please Login or Signup!
         </Typography>

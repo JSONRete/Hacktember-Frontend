@@ -6,7 +6,7 @@ import { ErrorContext } from "../context/ErrorProvider";
 
 export const Error = () => {
   const { error, setError } = useContext(ErrorContext);
-  const { open, setOpen } = useState(null);
+  const [ open, setOpen ] = useState(null);
 
   useEffect(() => {
     if (error) {

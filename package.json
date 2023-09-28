@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "@clerk/clerk-react": "^4.25.1"
-  }
-}

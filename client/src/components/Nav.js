@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../context/UserProvider';
 
 function Nav() {
+
+  const { handleLogoutClick, user} = useContext(UserContext);
+
   return (
     <div className="App bg-slate-200 p-8 flex m-5 justify-end space-x-6">
       <Link to="/">
@@ -41,7 +45,7 @@ function Nav() {
           About Us
         </Link>
       </div>
-      <button className="bg-red-700 text-white hover:bg-blue-600 rounded-xl p-2">
+      <button onClick={handleLogoutClick}className="bg-red-700 text-white hover:bg-blue-600 rounded-xl p-2">
         Logout
       </button>
     </div>

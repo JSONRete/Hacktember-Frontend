@@ -3,24 +3,35 @@ import React from "react";
 function Home() {
   return (
     <section className="bg-[#f5f1ed]">
-      <div className=" h-screen w-screen overflow-scroll">
-        <div className="min-h-screen bg-[#f5f1ed] w-1/2 pt-20 flex flex-col justify-center snap-start">
-          <h1 className="text-8xl font-bold mt-40 text-center">
-            Learn Python At Any Age{" "}
-          </h1>
+      <div className="firstView h-[80vh] w-auto border-t-4 border-b-8 border-black">
+        <div className="leftSide h-screen w-screen flex">
+          <div
+            className="w-1/2 bg-[#f5f1ed] bg-cover"
+            style={{
+              backgroundImage:
+                "url('https://img.freepik.com/premium-photo/elderly-man-works-computer-with-computer-screen-that-says-word-code_902338-4686.jpg')",
+            }}
+          ></div>
 
-          <div>
-            <p className=" text-3xl mt-40 text-center">
-              Join thousands of other seniors who taught themselves to code with
-              our free recources!
-            </p>
+          <div className="rightSide w-1/2 bg-[#f5f1ed] flex flex-col justify-center snap-start border-l-4 border-black">
+            <h1 className="text-8xl font-bold mt-40 text-center">
+              Learn Python At Any Age{" "}
+            </h1>
+
+            <div>
+              <p className="text-3xl mt-40 text-center">
+                Join thousands of other seniors who taught themselves to code
+                with our free resources!
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="greenreviewdiv h-3/5 bg-[#a1a485] w-screen flex flex-col justify-center snap-start">
+        
+        <div className="greenReviewDiv h-3/5 bg-[#d3cfc8] w-auto flex flex-col border-t-4 border-black justify-center snap-start">
           <div className="flex w-full justify-between items-center">
-            <div className="leftone w-1/3 bg-blue-300 flex flex-col justify-center items-center p-4">
-              <div className="w-full h-full bg-white rounded-md p-4">
+            <div className="leftOne w-1/3 h-full bg-blue-300 flex flex-col justify-center items-center p-4 mx-4">
+              <div className="reviewSquare w-full h-full bg-white rounded-md p-4">
                 <p className="text-center">
                   “I never thought I'd be able to learn Python at my age, but
                   this online course made it possible! The step-by-step lessons
@@ -32,8 +43,8 @@ function Home() {
               <p className="text-center">Review</p>
             </div>
 
-            <div className="middleone w-1/3 bg-green-300 flex flex-col justify-center items-center p-4">
-              <div className="w-full h-full bg-white rounded-md p-4">
+            <div className="middleOne w-1/3 h-full bg-green-300 flex flex-col justify-center items-center p-4 mx-4">
+              <div className="reviewSquare w-full h-full bg-white rounded-md p-4">
                 <p className="text-center">
                   “I never thought I'd be able to learn Python at my age, but
                   this online course made it possible! The step-by-step lessons
@@ -45,8 +56,8 @@ function Home() {
               <p className="text-center">Review</p>
             </div>
 
-            <div className="rightone w-1/3 bg-red-300 flex flex-col justify-center items-center p-4">
-              <div className="w-full h-full bg-white rounded-md p-4">
+            <div className="rightOne w-1/3 h-full bg-red-300 flex flex-col justify-center items-center p-4 mx-4">
+              <div className="reviewSquare w-full h-full bg-white rounded-md p-4">
                 <p className="text-center">
                   “I never thought I'd be able to learn Python at my age, but
                   this online course made it possible! The step-by-step lessons
@@ -60,13 +71,13 @@ function Home() {
           </div>
         </div>
 
-        <div className="min-h-screen bg-[#4a5240] w-screen flex flex-col justify-center snap-start">
+        <div className="min-h-screen bg-[#4a5240] w-auto flex flex-col justify-center snap-start">
           <h1 className="text-center text-6xl font-bold underline  text-[#f5f1ed]">
-            View Our course Catalogue
+            View Our Course Catalogue
           </h1>
         </div>
 
-        <div className="snap-start w-screen h-40 overflow-scroll">
+        <div className="snap-start w-auto h-40 overflow-scroll">
           <p className="text-center"> footer?</p>
         </div>
       </div>

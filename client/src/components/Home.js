@@ -17,58 +17,48 @@ function Home() {
           </div>
         </div>
 
-        <div className="h-2/5 bg-[#a1a485] w-screen flex flex-col justify-center snap-start">
-          <h1 className="text-6xl font-bold underline text-center">
-            Review Section
-          </h1>
-
-          <div className="flex w-full h-2/4 justify-center items-center">
-            <div className="w-1/3 h-2/3 bg-blue-300 flex flex-col justify-center items-center">
-              <div className="w-20 h-20 bg-white rounded-full mb-4">
-                {/* This div creates a centered square */}
+        <div className="greenreviewdiv h-3/5 bg-[#a1a485] w-screen flex flex-col justify-center snap-start">
+          <div className="flex w-full justify-between items-center">
+            <div className="leftone w-1/3 bg-blue-300 flex flex-col justify-center items-center p-4">
+              <div className="w-full h-full bg-white rounded-md p-4">
+                <p className="text-center">
+                  “I never thought I'd be able to learn Python at my age, but
+                  this online course made it possible! The step-by-step lessons
+                  and patient explanations made the world of programming
+                  accessible to someone like me.”
+                </p>
               </div>
-              <img src="your-image-url" alt="Image" className="h-8 w-8" />
+              <img src="your-image-url" alt="Image" className="h-8 w-8 mt-4" />
               <p className="text-center">Review</p>
             </div>
 
-            <div className="w-1/3 h-2/3 bg-green-300 flex flex-col justify-center items-center">
-              <div className="w-20 h-20 bg-white rounded-full mb-4">
-                {/* This div creates a centered square */}
+            <div className="middleone w-1/3 bg-green-300 flex flex-col justify-center items-center p-4">
+              <div className="w-full h-full bg-white rounded-md p-4">
+                <p className="text-center">
+                  “I never thought I'd be able to learn Python at my age, but
+                  this online course made it possible! The step-by-step lessons
+                  and patient explanations made the world of programming
+                  accessible to someone like me.”
+                </p>
               </div>
-              <img src="your-image-url" alt="Image" className="h-8 w-8" />
+              <img src="your-image-url" alt="Image" className="h-8 w-8 mt-4" />
               <p className="text-center">Review</p>
             </div>
 
-            <div className="w-1/3 h-2/3 bg-red-300 flex flex-col justify-center items-center">
-              
-              <img src="your-image-url" alt="Image" className="h-8 w-8" />
-              <p className="text-center">Review</p>
-              <div className="w-20 h-20 bg-white rounded-full mb-4">
-                {/* This div creates a centered square */}
+            <div className="rightone w-1/3 bg-red-300 flex flex-col justify-center items-center p-4">
+              <div className="w-full h-full bg-white rounded-md p-4">
+                <p className="text-center">
+                  “I never thought I'd be able to learn Python at my age, but
+                  this online course made it possible! The step-by-step lessons
+                  and patient explanations made the world of programming
+                  accessible to someone like me.”
+                </p>
               </div>
+              <img src="your-image-url" alt="Image" className="h-8 w-8 mt-4" />
+              <p className="text-center">Review</p>
             </div>
           </div>
         </div>
-        {/* <div className="h-2/5 bg-[#a1a485] w-screen  flex flex-col justify-center snap-start">
-          
-
-          <h1 className="text-6xl font-bold underline ">Review Section</h1>
-
-          <div className="flex w-full h-2/4">
-            
-            <div className="w-1/3 h-2/4 bg-blue-300">
-              <p>review</p>
-            </div>
-            
-            <div className="w-1/3  bg-green-300">
-              <p>review</p>
-            </div>
-            
-            <div className="w-1/3 bg-red-300">
-              <p>review</p>
-            </div>
-          </div>
-        </div> */}
 
         <div className="min-h-screen bg-[#4a5240] w-screen flex flex-col justify-center snap-start">
           <h1 className="text-center text-6xl font-bold underline  text-[#f5f1ed]">
@@ -76,7 +66,9 @@ function Home() {
           </h1>
         </div>
 
-        <div className="snap-start w-screen h-screen overflow-scroll"></div>
+        <div className="snap-start w-screen h-40 overflow-scroll">
+          <p className="text-center"> footer?</p>
+        </div>
       </div>
     </section>
   );

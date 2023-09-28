@@ -25,9 +25,10 @@ function Home() {
               </p>
             </div>
 
-            <button className="form-button text-3xl bg-[#000000] text-white px-4 py-10 mx-80 ">
+            <button className="form-button text-5xl bg-[#000000] text-white px-4 py-10 mx-80 ">
               Get Started
             </button>
+            {/* make this go to the signup page. if logged in go tolibrary */}
           </div>
         </div>
 

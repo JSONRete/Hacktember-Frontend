@@ -49,7 +49,7 @@ const Register = () => {
       password: "",
     },
     validationSchema: isLoggedIn ? registerSchema : signSinSchema,
-    onsubmit: (values, { resetForm }) => {
+    onSubmit: (values, { resetForm }) => {
       resetForm();
       const ok = handleRegister(values);
       if (ok) {

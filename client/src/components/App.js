@@ -5,7 +5,7 @@ import Nav from '../components/Nav';
 import Home from '../components/Home'; // Import your route components here
 import Courses from '../components/Courses';
 import Contact from '../components/Contact';
-import Login from '../components/Login';
+import Register from '../components/Register';
 import About from '../components/About';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} /> {/* Specify your routes here */}
         <Route path="/courses" element={<Courses />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>

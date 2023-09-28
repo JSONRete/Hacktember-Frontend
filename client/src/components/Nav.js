@@ -28,7 +28,7 @@ function Nav() {
       <div>
         <Link
           className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
-          to="/login" 
+          to="/register" 
         >
           Login
         </Link>

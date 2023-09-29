@@ -7,6 +7,7 @@ import Courses from '../components/Courses';
 import Contact from '../components/Contact';
 import Register from '../components/Register';
 import About from '../components/About';
+import Library from './Library';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
+        <Route path="/library" element={<Library />}/>
       </Routes>
     </Router>
   );

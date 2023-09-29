@@ -7,15 +7,20 @@ function Nav() {
   const { handleLogoutClick, user} = useContext(UserContext);
 
   return (
-    <div className="App bg-slate-200 p-8 flex m-5 justify-end space-x-6">
+    <div className="p-8 flex m-5 justify-between">
+            <Link to="/">
+        <h1 className="text-4xl text-slate-900 font-extrabold hover:text-blue-600 font-display">
+        Learnability Pathways
+        </h1>
+      </Link>
       <Link to="/">
-        <h1 className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display">
+        <h1 className="text-4xl text-slate-900 font-extrabold hover:text-blue-600 font-display border border-slate-900 px-4 py-2 rounded">
           Home
         </h1>
       </Link>
       <div>
         <Link
-          className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
+          className="text-4xl text-slate-900 font-extrabold hover:text-blue-600 font-display border border-slate-900 px-4 py-2 rounded"
           to="/courses" 
         >
           Courses
@@ -23,31 +28,23 @@ function Nav() {
       </div>
       <div>
         <Link
-          className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
+          className="text-4xl text-slate-900 font-extrabold hover:text-blue-600 font-display border border-slate-900 px-4 py-2 rounded"
           to="/contact" 
         >
-          Contact
+          Library
         </Link>
       </div>
       <div>
-        <Link
-          className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
+      { !user && (  <Link
+          className="text-4xl text-slate-900 font-extrabold hover:text-blue-600 font-display border border-slate-900 px-4 py-2 rounded"
           to="/register" 
         >
           Login
-        </Link>
+        </Link>)}
       </div>
-      <div>
-        <Link
-          className="text-4xl text-pink-900 underline font-extrabold hover:text-blue-600 font-display"
-          to="/about" 
-        >
-          About Us
-        </Link>
-      </div>
-      <button onClick={handleLogoutClick}className="bg-red-700 text-white hover:bg-blue-600 rounded-xl p-2">
+     {user && ( <button onClick={handleLogoutClick}className="bg-red-700 text-white hover:bg-blue-600 rounded-xl p-2 font-display">
         Logout
-      </button>
+      </button>)}
     </div>
   );
 }

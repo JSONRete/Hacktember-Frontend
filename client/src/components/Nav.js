@@ -43,12 +43,14 @@ function Nav() {
           </Link>
         )}
       {user && (
+        <Link >
         <button
           onClick={handleLogoutClick}
-          className="bg-red-700 text-white hover:bg-blue-600 rounded-xl p-2 font-display"
+          className="bg-red-700 text-4xl text-slate-900 font-extrabold hover:text-blue-600  hover:bg-white font-display border border-slate-900 px-4 py-2 rounded"
         >
           Logout
         </button>
+        </Link>
       )}
     </div>
     </div>

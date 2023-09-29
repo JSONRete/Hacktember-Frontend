@@ -25,9 +25,11 @@ function Home() {
               </p>
             </div>
 
-            <button className="form-button text-3xl lg:text-5xl bg-[#000000] text-white px-4 lg:px-8 py-2 lg:py-4 mx-4 lg:mx-80 max-w-full lg:max-w-[50%] overflow-hidden">
-              Get Started
-            </button>
+            <div className="flex justify-center"> 
+              <button className="form-button text-xl lg:text-3xl bg-[#000000] text-white px-4 lg:px-8 lg:py-4 max-w-full lg:max-w-[50%]">
+                Get Started
+              </button>
+            </div>
             {/* make this go to the signup page. if logged in go to library */}
           </div>
         </div>

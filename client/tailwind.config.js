@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         // Add Custom Fonts Here
-        display: 'Oswald, ui-serif', // Adds a new `font-display` class
+        display: 'Coda, ui-serif', // Adds a new `font-display` class
       },
       colors: {
         // Add Custom Colors Here // 

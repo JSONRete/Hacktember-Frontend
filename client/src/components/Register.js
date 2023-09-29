@@ -12,7 +12,6 @@ import { IoIosArrowBack } from "react-icons/io";
 import Typography from "@mui/material/Typography";
 import {
   Box,
-  Button,
   Container,
   FormControlLabel,
   Switch,
@@ -64,17 +63,15 @@ const Register = () => {
   return (
     <Container>
       <Link>
-      <span className="">
+      <span className="font-display">
       <IoIosArrowBack/>Back
       </span>
       </Link>
       <Box mt={5} display="flex" flexDirection="column" alignItems="center">
       <img src="waving-hand.png" alt="" width={200} height={200}/>
-        <Typography variant="h4" gutterBottom>
+        <h4 className="font-display">
           Please Login or Signup!
-        </Typography>
-
-        <Typography variant="4" gutterBottom></Typography>
+        </h4>
         <Box component="form" onSubmit={formik.handleSubmit} width="25%">
           <TextField
             label="Email"
@@ -101,12 +98,13 @@ const Register = () => {
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
-          <Button
+          <button
             type="submit"
-            sx={{ mt: 2 }}
+
+            className="font-display"
           >
             {isLoggedIn ? "Login" : "Sign up"}{" "}
-          </Button>
+          </button>
         </Box>
         <FormControlLabel
           control={<Switch checked={isLoggedIn} onChange={handleLogin} />}

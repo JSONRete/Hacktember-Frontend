@@ -3,8 +3,8 @@ import React from "react";
 function Home() {
   return (
     <section className="bg-[#f5f1ed]">
-      <div className="firstView min-h-[80vh] w-auto border-t-4 border-b-8 border-black">
-        <div className="leftSide h-screen w-screen flex">
+      <div className="firstView min-h-[80vh] w-auto border-t-4 border-b-8 border-black overflow-x-hidden">
+        <div className="leftSide h-screen w-screen flex ">
           <div
             className="w-1/2 bg-[#f5f1ed] bg-cover"
             style={{
@@ -45,7 +45,7 @@ function Home() {
                 <p className="text-center"> - Name, 67 </p>
               </div>
               <img
-                src="https://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10167-older-adult-medium-skin-tone-icon.png"
+                src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
                 alt="Image"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />
@@ -63,7 +63,7 @@ function Home() {
                 <p className="text-center"> - Name, 76 </p>
               </div>
               <img
-                src="https://www.iconarchive.com/download/i108757/google/noto-emoji-people-face/10181-old-woman-dark-skin-tone.1024.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/4/43/Paul_Circle.png"
                 alt="Image"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />
@@ -81,7 +81,7 @@ function Home() {
                 <p className="text-center"> - Name, 71 </p>
               </div>
               <img
-                src="https://www.iconarchive.com/download/i108751/google/noto-emoji-people-face/10175-old-man-dark-skin-tone.ico"
+                src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
                 alt="Image"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />

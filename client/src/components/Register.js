@@ -9,7 +9,6 @@ import { ErrorContext } from "../context/ErrorProvider";
 
 import { IoIosArrowBack } from "react-icons/io";
 
-import Typography from "@mui/material/Typography";
 import {
   Box,
   Container,

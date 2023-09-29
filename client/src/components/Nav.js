@@ -37,6 +37,7 @@ function Nav() {
         {!user && (
           <Link
             className={links}
+            to="/register"
           >
             Login
           </Link>

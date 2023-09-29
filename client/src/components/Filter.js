@@ -3,10 +3,15 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { ContentContext } from '../context/ContentProvider';
+import { ErrorContext } from '../context/ErrorProvider';
+
 
 export default function Filter() {
   const [difficulty, setDifficulty] = useState('');
+  const { course, handleCourse } = useContext(ContentContext);
+  const { error } = useContext(ErrorContext);
 
   const handleChange = (event) => {
     setDifficulty(event.target.value);
@@ -23,9 +28,11 @@ export default function Filter() {
           label="Difficulty"
           onChange={handleChange}
         >
-          <MenuItem value={10}>Beginner</MenuItem>
-          <MenuItem value={20}>Intermediate</MenuItem>
-          <MenuItem value={30}>Expert</MenuItem>
+          {course.map((course) => (
+            <MenuItem key={course.id} value={course.difficulty}>
+              {course.difficulty}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Box>

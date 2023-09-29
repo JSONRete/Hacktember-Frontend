@@ -18,22 +18,22 @@ function Home() {
               Learn Python At Any Age{" "}
             </h1>
 
-            <div>
+            <div className="text-container">
               <p className="text-2xl lg:text-4xl font-bold mt-4 lg:mt-20 text-center pb-4 lg:pb-20">
                 Join thousands of other seniors who taught themselves to code
                 with our free resources!
               </p>
             </div>
 
-            <button className="form-button text-3xl lg:text-5xl bg-[#000000] text-white px-2 lg:px-4 py-2 lg:py-10 mx-4 lg:mx-80">
+            <button className="form-button text-3xl lg:text-5xl bg-[#000000] text-white px-4 lg:px-8 py-2 lg:py-4 mx-4 lg:mx-80 max-w-full lg:max-w-[50%] overflow-hidden">
               Get Started
             </button>
             {/* make this go to the signup page. if logged in go to library */}
           </div>
         </div>
 
-        <div className="greenReviewDiv h-3/5 bg-[#d3cfc8] w-auto flex flex-col border-t-4 border-black justify-center snap-start">
-          <div className="reviewHolder flex w-full justify-between items-center h-full">
+        <div className="greyReviewDiv h-3/5 bg-[#d3cfc8] w-auto flex flex-col border-t-4 border-black justify-center snap-start">
+          <div className="reviewHolder flex w-full justify-between mt-8 items-center h-full">
             <div className="leftOne w-1/3 h-full bg-[#d3cfc8] flex flex-col justify-center items-center p-4 px-8 lg:px-40">
               <div className="reviewSquare square bg-white p-2 lg:p-4 border-2 border-black">
                 <p className="text-sm lg:text-center font-bold">

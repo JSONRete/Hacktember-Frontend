@@ -29,13 +29,7 @@ function Nav() {
             Login{" "}
           </Link>
         )}
-
-        {!user && (
-          <Link
-            className={links}
-            to="/register"
-          >
-            Login
+            
         {user && (
           <Link>
             <button

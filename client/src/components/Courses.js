@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import ChatBot from "../components/ChatBot";
+import React, { useState, useContext} from "react";
 import { ContentContext } from "../context/ContentProvider";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
@@ -13,7 +12,7 @@ import { BsPlayFill } from "react-icons/bs";
 
 export default function CourseCatalog() {
   const { course, handleCourse } = useContext(ContentContext);
-  const [difficulty, setDifficulty] = useState("");
+  const [difficulty, setDifficulty] = useState("All");
 
   const handleChange = (event) => {
     const selectedDifficulty = event.target.value;
@@ -25,11 +24,12 @@ export default function CourseCatalog() {
   };
 
   return (
-    <div>
-      <h1 className="font-display text-4xl mb-5 mt-20 ml-25">Course Catalog</h1>
-      <div style={{ display: "block", position: "relative" }}>
-        <ChatBot />
+    <>
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <div>
+      <h1 className="font-display text-4xl mb-5 mt-20 ml-25 mx-20">Course Catalog</h1>
       </div>
+      <div className="mb-5 mt-20 ml-25 mx-20" style={{ marginLeft: "auto" }}>
       <Box sx={{ minWidth: 120 }}>
         <FormControl sx={{ minWidth: 250 }}>
           <InputLabel id="demo-simple-select-label">Difficulty</InputLabel>
@@ -40,16 +40,21 @@ export default function CourseCatalog() {
             label="Difficulty"
             onChange={handleChange}
           >
+            <MenuItem value="All">All</MenuItem>
             <MenuItem value="Beginner">Beginner</MenuItem>
             <MenuItem value="Intermediate">Intermediate</MenuItem>
             <MenuItem value="Expert">Expert</MenuItem>
           </Select>
         </FormControl>
       </Box>
+      </div>
+      </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <ImageList sx={{ width: 1000, height: 950 }}>
           {course
-            .filter((item) => item.difficulty === difficulty)
+            .filter(
+              (item) => difficulty === "All" || item.difficulty === difficulty
+            )
             .map((item) => (
               <ImageListItem
                 key={item.course_image}
@@ -75,6 +80,6 @@ export default function CourseCatalog() {
             ))}
         </ImageList>
       </div>
-    </div>
+      </>
   );
 }

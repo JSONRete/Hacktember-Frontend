@@ -22,14 +22,17 @@ function Nav() {
         <Link className={links} to="/courses">
           Courses
         </Link>
-        {user && <Link className={links}>Library</Link>}
+        {user && (
+          <Link className={links} to="/library">
+            Library
+          </Link>
+        )}
         {!user && (
           <Link className={links} to="/register">
             {" "}
             Login{" "}
           </Link>
         )}
-            
         {user && (
           <Link>
             <button

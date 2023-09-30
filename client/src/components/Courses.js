@@ -8,6 +8,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Link } from 'react-router-dom'
 import { BsPlayFill } from "react-icons/bs";
 
 export default function CourseCatalog() {
@@ -28,7 +29,7 @@ export default function CourseCatalog() {
 
   return (
     <>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: '10px' }}>
         <div>
           <h1 className="font-display text-4xl mb-5 mt-20 ml-25 mx-20">
             Course Catalog
@@ -81,6 +82,7 @@ export default function CourseCatalog() {
                   height: "auto",
                 }}
               >
+                <Link to={`/course/${item.id}`}>
                 <img
                   srcSet={`${item.course_image}?w=248&fit=crop&auto=format&dpr=2 2x`}
                   src={`${item.course_image}?w=248&fit=crop&auto=format`}
@@ -89,8 +91,9 @@ export default function CourseCatalog() {
                   style={{ objectFit: "cover", width: "100%", height: "100%" }}
                   className="hover:animate-pulse"
                 />
+                </Link>
                 <ImageListItemBar
-                  sx={{ marginY: 5 }}
+                  sx={{ marginBottom: '2px' }}
                   title={
                     <span>
                       {item.title} | Creator: {item.creator}

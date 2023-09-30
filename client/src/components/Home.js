@@ -15,18 +15,18 @@ function Home() {
 
           <div className="rightSide w-1/2 bg-[#ffffff] flex flex-col justify-center snap-start border-l-4 border-black">
             <h1 className="text-6xl lg:text-8xl font-extrabold mt-10 lg:mt-40 text-center px-4 lg:px-28">
-              Learn Python At Any Age{" "}
+              Learn Python At Any Age
             </h1>
 
             <div className="text-container">
-              <p className="text-2xl lg:text-4xl font-bold mt-4 lg:mt-20 text-center pb-4 lg:pb-20">
+              <p className="text-2xl lg:text-4xl font-bold mt-4 lg:mt-20 text-center pb-4 lg:pb-8">
                 Join thousands of other seniors who taught themselves to code
                 with our free resources!
               </p>
             </div>
 
-            <div className="flex justify-center"> 
-              <button className="form-button text-xl lg:text-3xl bg-[#000000] text-white px-4 lg:px-8 lg:py-4 max-w-full lg:max-w-[50%]">
+            <div className="flex justify-center">
+              <button className="form-button text-xl lg:text-3xl bg-[#000000] text-white px-4 lg:px-8 lg:py-4 lg:w-48">
                 Get Started
               </button>
             </div>
@@ -44,13 +44,19 @@ function Home() {
                   and patient explanations made the world of programming
                   accessible to someone like me.”
                 </p>
-                <p className="text-center"> - Name, 67 </p>
+                <p className="text-center"> - Rome, 67 </p>
               </div>
-              <img
-                src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
-                alt="Profile picture or reviewer"
-                className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
-              />
+
+              <div className="profilePicture h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4 relative">
+                <div className="rounded-full overflow-hidden h-full w-full">
+                  <img
+                    src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
+                    alt="Profile picture or reviewer"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+
               <p className="text-center">5/5 Review</p>
             </div>
 
@@ -62,13 +68,19 @@ function Home() {
                   and patient explanations made the world of programming
                   accessible to someone like me.”
                 </p>
-                <p className="text-center"> - Name, 76 </p>
+                <p className="text-center"> - Lars, 76 </p>
               </div>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/4/43/Paul_Circle.png"
-                alt="Profile picture or reviewer"
-                className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
-              />
+
+              <div className="profilePicture h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4 relative">
+                <div className="rounded-full overflow-hidden h-full w-full">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/43/Paul_Circle.png"
+                    alt="Profile picture or reviewer"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+
               <p className="text-center">5/5 Review</p>
             </div>
 
@@ -80,25 +92,24 @@ function Home() {
                   and patient explanations made the world of programming
                   accessible to someone like me.”
                 </p>
-                <p className="text-center"> - Name, 71 </p>
+                <p className="text-center"> - Ayesha, 71 </p>
               </div>
-              <img
-                src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
-                alt="Profile picture or reviewer"
-                className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
-              />
+
+              <div className="profilePicture h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4 relative">
+                <div className="rounded-full overflow-hidden h-full w-full">
+                  <img
+                    src="https://media.istockphoto.com/id/953507506/photo/confident-senior-woman-of-india.jpg?s=612x612&w=0&k=20&c=GM_DuemyVSR-Fg_Xu_dUHZRe6KVNDInZRRVKjDYODCc="
+                    alt="Profile picture or reviewer"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
               <p className="text-center">5/5 Review</p>
             </div>
           </div>
         </div>
 
-        <div className="min-h-screen bg-[#4a5240] w-auto flex flex-col justify-center snap-start">
-          <h1 className="text-center text-4xl lg:text-6xl font-bold underline text-[#f5f1ed]">
-            View Our Course Catalogue
-          </h1>
-        </div>
-
-        <div className="snap-start w-auto h-20 lg:h-40 overflow-scroll">
+        <div className="snap-start w-auto h-20 lg:h-20 overflow-scroll">
           <p className="text-center"> footer?</p>
         </div>
       </div>

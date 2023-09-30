@@ -8,6 +8,7 @@ import {
   CardContent,
 } from "@mui/material";
 import YouTube from "react-youtube";
+import ChatBot from "../components/ChatBot"
 
 function VideoDetails() {
   const { videoId } = useParams();
@@ -54,7 +55,7 @@ function VideoDetails() {
   // Function to handle thumbnail click and switch the selected video
   const handleThumbnailClick = (index) => {
     setSelectedVideoIndex(index);
-  
+
     // Update the description based on the selected video's description
     const selectedVideo = videoData.videos[index];
     const updatedDescription =
@@ -62,7 +63,7 @@ function VideoDetails() {
         ? `${selectedVideo.description.slice(0, 300)}...`
         : selectedVideo.description;
     setLimitedDescription(updatedDescription);
-  
+
     // Scroll to the top of the page
     window.scrollTo({
       top: 0,
@@ -72,6 +73,9 @@ function VideoDetails() {
 
   return (
     <Container maxWidth="md">
+      <div style={{display: 'block', position: 'relative'}}>
+        <ChatBot />
+      </div>
       <Typography variant="h4" gutterBottom>
         {videoData.title}
       </Typography>
@@ -90,7 +94,10 @@ function VideoDetails() {
       </div>
 
       {/* Description Box */}
-      <div className="description-container border-2 border-slate-900 px-4 py-2">
+      <div
+        className="description-container border-2 border-slate-900 px-4 py-2"
+        style={{ marginBottom: "80px" }}
+      >
         <div className="description-header">
           <span
             style={{
@@ -128,8 +135,8 @@ function VideoDetails() {
 
       {/* Section for other videos */}
       <div>
-        <Typography variant="h5" gutterBottom>
-          Next in this series...
+        <Typography variant="h5" gutterBottom style={{ fontSize: "24px" }}>
+          <strong>Lessons in this series...</strong>
         </Typography>
         <div className="video-list">
           {videoData.videos.map((video, index) => (
@@ -137,8 +144,13 @@ function VideoDetails() {
               key={video.id}
               className="video-card"
               onClick={() => handleThumbnailClick(index)}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", marginBottom: "40px" }}
             >
+              {/* Chapter Label */}
+              <Typography variant="subtitle1" style={{ fontWeight: "bold" }}>
+                Chapter {index + 1}
+              </Typography>
+
               {/* Thumbnail */}
               <img
                 src={video.pic}
@@ -146,9 +158,20 @@ function VideoDetails() {
                 className="video-thumbnail"
               />
               <CardContent>
-                <Typography variant="subtitle1">{video.title}</Typography>
-                <Typography variant="body2">{video.creator}</Typography>
-                <Typography variant="body2">{video.description}</Typography>
+                {/* Video Title */}
+                <Typography variant="subtitle1">
+                  <strong>{video.title}</strong>
+                </Typography>
+
+                {/* Creator */}
+                <Typography variant="body2">{videoData.creator}</Typography>
+
+                {/* Description */}
+                <Typography variant="body2">
+                  {video.description.length > 300
+                    ? `${video.description.slice(0, 300)}...`
+                    : video.description}
+                </Typography>
               </CardContent>
             </Card>
           ))}

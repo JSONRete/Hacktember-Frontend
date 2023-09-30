@@ -8,6 +8,7 @@ import {
   CardContent,
 } from "@mui/material";
 import YouTube from "react-youtube";
+import ChatBot from "../components/ChatBot"
 
 function VideoDetails() {
   const { videoId } = useParams();
@@ -72,6 +73,9 @@ function VideoDetails() {
 
   return (
     <Container maxWidth="md">
+      <div style={{display: 'block', position: 'relative'}}>
+        <ChatBot />
+      </div>
       <Typography variant="h4" gutterBottom>
         {videoData.title}
       </Typography>

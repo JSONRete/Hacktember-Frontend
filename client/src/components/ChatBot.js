@@ -10,6 +10,9 @@ export default function ChatBot() {
     const [aiResponse, setAiResponse] = useState('')
     const [userQuestion, setUserQuestion] = useState('')
 
+    // is triggered from recorder which takes in audio blob, converts it to audio file
+    // sets up data as form that's sent to openai API
+    // response set as new transcription state
     const handleStop = (blobUrl, blob) => {
         const audiofile = new File([blob], "audiofile.wav", {
             type: "audio/wav",
@@ -29,6 +32,7 @@ export default function ChatBot() {
             })
     }
 
+    // checks state of transcription is updated before sending it to sendTranscript func
     useEffect(() => {
         if (transcription !== '') {
             sendTranscript(transcription); // Send the updated transcription
@@ -36,7 +40,8 @@ export default function ChatBot() {
         }
     }, [transcription]);
 
-
+    // takes in state of transcription and sends to elevenlab api
+    // returns the AI response as object that includes audio and text  
     const sendTranscript = (transcript) => {
         console.log(transcript)
         const question = { question: transcript }
@@ -55,14 +60,16 @@ export default function ChatBot() {
             });
     }
 
+    // handles taking in the text question from user and sends to api
     const handleSubmit = (e) => {
         e.preventDefault();
         // Send the user's question to the /ask endpoint
         sendTranscript(userQuestion);
-        // Optionally, you can clear the input field after submission
+        // Clear the input field after submission
         setUserQuestion('');
     };
 
+    // Handles text toggle on record btn
     const handleBtnClick = () => {
         console.log("Record button toggle")
         setIsRecordingText(!isRecordingText);
@@ -114,6 +121,7 @@ export default function ChatBot() {
         </div>
     );
 }
+
 // useEffect(() => {
 //     // Initialize TypeIt
 //     new TypeIt("#response-text", {

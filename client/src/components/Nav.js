@@ -8,8 +8,8 @@ function Nav() {
     "text-4xl text-slate-900 font-extrabold hover:text-blue-600 hover:underline hover:bg-slate-100 font-display border border-slate-900 px-4 py-2 rounded";
 
   return (
-    <div className="">
-      <div className="p-8 flex m-5 justify-end space-x-4">
+    <div className="relative flex h-16 items-center justify-between">
+      <div className="p-8 flex m-5 justify-start space-x-4">
         <Link
           to="/"
           className="text-4xl text-slate-900 font-extrabold hover:text-blue-600 hover:underline font-display"
@@ -17,7 +17,7 @@ function Nav() {
           Learnability Pathways
         </Link>
         </div>
-        <div>
+        <div className="p-8 flex m-5 justify-end space-x-4">
         <Link className={links} to="/">
           Home
         </Link>

@@ -3,8 +3,8 @@ import React from "react";
 function Home() {
   return (
     <section className="bg-[#f5f1ed]">
-      <div className="firstView min-h-[80vh] w-auto border-t-4 border-b-8 border-black">
-        <div className="leftSide h-screen w-screen flex">
+      <div className="firstView min-h-[80vh] w-auto border-t-4 border-b-8 border-black overflow-x-hidden">
+        <div className="leftSide h-screen w-screen flex ">
           <div
             className="w-1/2 bg-[#f5f1ed] bg-cover"
             style={{
@@ -25,9 +25,11 @@ function Home() {
               </p>
             </div>
 
-            <button className="form-button text-3xl lg:text-5xl bg-[#000000] text-white px-4 lg:px-8 py-2 lg:py-4 mx-4 lg:mx-80 max-w-full lg:max-w-[50%] overflow-hidden">
-              Get Started
-            </button>
+            <div className="flex justify-center"> 
+              <button className="form-button text-xl lg:text-3xl bg-[#000000] text-white px-4 lg:px-8 lg:py-4 max-w-full lg:max-w-[50%]">
+                Get Started
+              </button>
+            </div>
             {/* make this go to the signup page. if logged in go to library */}
           </div>
         </div>
@@ -45,7 +47,7 @@ function Home() {
                 <p className="text-center"> - Name, 67 </p>
               </div>
               <img
-                src="https://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10167-older-adult-medium-skin-tone-icon.png"
+                src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
                 alt="Image"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />
@@ -63,7 +65,7 @@ function Home() {
                 <p className="text-center"> - Name, 76 </p>
               </div>
               <img
-                src="https://www.iconarchive.com/download/i108757/google/noto-emoji-people-face/10181-old-woman-dark-skin-tone.1024.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/4/43/Paul_Circle.png"
                 alt="Image"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />
@@ -81,7 +83,7 @@ function Home() {
                 <p className="text-center"> - Name, 71 </p>
               </div>
               <img
-                src="https://www.iconarchive.com/download/i108751/google/noto-emoji-people-face/10175-old-man-dark-skin-tone.ico"
+                src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
                 alt="Image"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />

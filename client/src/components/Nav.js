@@ -16,6 +16,8 @@ function Nav() {
         >
           Learnability Pathways
         </Link>
+        </div>
+        <div>
         <Link className={links} to="/">
           Home
         </Link>

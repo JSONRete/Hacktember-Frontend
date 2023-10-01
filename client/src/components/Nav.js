@@ -8,6 +8,7 @@ function Nav() {
     "text-4xl text-slate-900 font-extrabold hover:text-blue-600 hover:underline hover:bg-slate-100 font-display border border-slate-900 px-4 py-2 rounded";
 
   return (
+    <>
     <div className="relative flex h-16 items-center justify-between">
       <div className="p-2 flex m-1 justify-start space-x-4">
         <Link
@@ -44,8 +45,11 @@ function Nav() {
             </button>
           </Link>
         )}
-      </div>
     </div>
+    </div>
+    <div className="bg-slate-900 h-1">
+      </div>
+      </>
   );
 }
 

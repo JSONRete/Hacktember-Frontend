@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Home() {
   return (
     <section className="bg-[#f5f1ed]">
-      <div className="firstView min-h-[80vh] w-auto border-t-4 border-b-8 border-black overflow-x-hidden">
+      <div className="firstView min-h-[80vh] w-auto border-b-8 border-black overflow-x-hidden">
         <div className="leftSide h-screen w-screen flex ">
           <div
             className="w-1/2 bg-[#f5f1ed] bg-cover"

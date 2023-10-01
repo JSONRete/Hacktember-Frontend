@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { ReactMediaRecorder } from "react-media-recorder";
+import { GrMicrophone } from "react-icons/gr";
+import { HiOutlineMicrophone } from "react-icons/hi";
+import { VscSend } from "react-icons/vsc";
+// GrMicrophone
+// HiOutlineMicrophone
+
 
 import axios from 'axios';
 
@@ -68,13 +74,9 @@ export default function ChatBot() {
             .then((res) => {
             // Handle the response from the server here
                 console.log('Server Response:', res.data);
-                setAiResponse((prevAiResponse) => {
                     const newAiResponse = res.data
                     const botObj = { role: "bot", content: newAiResponse.text }
                     updateConversation(botObj)
-                    return newAiResponse
-                })
-
                 // const audio = new Audio()
             })
             .catch((error) => {
@@ -132,6 +134,7 @@ export default function ChatBot() {
                     </div>
                 </div>
             </div>
+
             <form onSubmit={handleSubmit} className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
                 <div className="relative flex">
                     <input
@@ -149,18 +152,27 @@ export default function ChatBot() {
                             className="inline-flex items-center justify-center rounded-full h-8 w-8 transition duration-200 ease-in-out text-white bg-blue-500 hover:bg-blue-600 focus:outline-none"
                             onClick={handleSubmit}
                         >
-                            <i className="mdi mdi-arrow-right text-xl leading-none"></i>
+                            <VscSend className="mdi mdi-arrow-right text-xl leading-none"/>
                         </button>
                     </div>
                 </div>
             </form>
-            <div className="mt-2">
+            <div className="absolute right-2 items-center inset-y-o flex">
                 <ReactMediaRecorder
                     audio
                     onStop={handleStop}
                     render={({ status, startRecording, stopRecording }) => (
                         <div className="mt-2">
-                            {isRecordingText === false ?
+                            {isRecordingText === false ? 
+                                <button onClick={handleBtnClick} onMouseDown={startRecording}>
+                                    <HiOutlineMicrophone className="text-sky-500 w-6 h-6" />
+                                </button>
+                            : 
+                                <button onClick={handleBtnClick} onMouseUp={stopRecording}>
+                                    <HiOutlineMicrophone  className="animate-pulse text-red-500 w-6 h-6" />
+                                </button>
+                            }
+                            {/* {isRecordingText === false ?
                                 <button
                                     onClick={handleBtnClick}
                                     onMouseDown={startRecording}
@@ -171,12 +183,10 @@ export default function ChatBot() {
                                     onMouseUp={stopRecording}
                                     className="bg-red-700 text-lg p-4 rounded-full text-white"
                                 >{isRecordingText ? "Stop" : "Record"}</button>
-                            }
+                            } */}
                         </div>
                     )}
                 />
-            </div>
-            <div>
             </div>
         </div>
 

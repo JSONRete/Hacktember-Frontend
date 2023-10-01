@@ -2,7 +2,9 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-[#ffffff] text-black">
+    <footer className="bg-[#ffffff] text-black sticky">
+      <div className="bg-slate-900 h-20">
+      </div>
       <div className="container mx-auto py-6 px-6">
         <div className="flex justify-between items-center">
           <div className="footer-section">

@@ -10,7 +10,7 @@ export default function ChatBot() {
     const [transcription, setTranscription] = useState('')
     const [aiResponse, setAiResponse] = useState('')
     const [userTextQuestion, setUserTextQuestion] = useState('')
-    const [conversation, setConversation] = useState([]);
+    const [conversation, setConversation] = useState([{role: 'bot', content: "Hi, I'm your friendly AI assistant. Click on the microphone or type any Python questions."}]);
 
 
     // is triggered from recorder which takes in audio blob, converts it to audio file
@@ -56,7 +56,7 @@ export default function ChatBot() {
     // returns the AI response as object that includes audio and text  
     const sendTranscript = async (transcript) => {
         setIsLoading(true)
-        console.log(transcript)
+        console.log(isLoading)
         const question = { question: transcript }
         await axios.post(
             'http://127.0.0.1:5555/ask',
@@ -103,15 +103,15 @@ export default function ChatBot() {
     }
 
     return (
-        <div id="chat" className="p-6 bg-white min-h-screen">
+        <div id="chat" className="p-6 bg-white h-8 bg-local">
             <div id="messages" className="space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
                 {conversation.map((message, index) => (
                     <div key={index} className={`flex ${message.role === 'bot' ? 'justify-start' : 'justify-end'} items-end`}>
                         <div className={`flex flex-col space-y-2 text-md leading-tight max-w-lg ${message.role === 'bot' ? 'order-2 items-start' : 'order-3 items-end'}`}>
                             <div>
-                                <span className={`px-4 py-3 rounded-xl inline-block ${message.role === 'bot' ? 'bg-gray-100 text-gray-600 rounded-bl-none' : 'bg-blue-500 text-white rounded-br-none'}`}>
+                                <span className={`px-4 py-3 rounded-xl inline-block ${message.role === 'bot' ? 'bg-gray-100 text-gray-600 rounded-bl-none mx-width-md' : 'bg-blue-500 text-white rounded-br-none'}`}>
                                     {message.content}
-                                    {message.role === 'bot' ? <audio src={aiResponse} className="appearance-none" controls /> : null}
+                                    {message.role === 'bot' && message.content !== "Hi, I'm your friendly AI assistant. Click on the microphone or type any Python questions." ? <audio src={aiResponse} className="appearance-none" controls /> : null}
                                 </span>
                             </div>
                         </div>
@@ -128,11 +128,11 @@ export default function ChatBot() {
                         )}
                     </div>
                 ))}
-                {conversation.length === 0 && !isLoading && (<div className="flex items-end" style={{ display: 'none' }}>
+                {isLoading && (
                     <div className="flex flex-col space-y-2 text-md leading-tight mx-2 order-2 items-start">
                         <div><img src="https://support.signal.org/hc/article_attachments/360016877511/typing-animation-3x.gif" alt="..." className="w-16 ml-6" /></div>
                     </div>
-                </div>) }
+                )}
             </div>
             <div id="buttons-container">
                 <div className="">
@@ -155,7 +155,7 @@ export default function ChatBot() {
                     )}
                 />
             </div>
-            <form onSubmit={handleSubmit} className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
+            <form onSubmit={handleSubmit} className="border-t-2 border-gray-200 px-4 pt-4 mb-4 sm:mb-0 sticky bottom-0 z-1">
                 <div className="relative flex">
                     <input
                         type="text"

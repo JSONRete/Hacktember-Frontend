@@ -77,7 +77,7 @@ function VideoDetails() {
 
   return (
     <div className='container'>
-      <div style={{display: 'block', position: 'relative'}}>
+      <div style={{display: 'block', position: 'relative', height: '500px', overflow: 'auto'}}>
         <ChatBot />
       </div>
     <Container maxWidth="md">

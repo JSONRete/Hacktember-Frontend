@@ -38,11 +38,14 @@
 }
 
 #chat{
-  width: 400px;
+  width: 450px;
   max-height: 500px;
+  
 }
 #record-button{
   float: left;
+  padding-top: 18px;
+  padding-right: 5px
 }
 
 .container{
@@ -50,7 +53,7 @@
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  padding-right: 250px;
+  padding-right: 150px;
   padding-top: 20px;
 }
 

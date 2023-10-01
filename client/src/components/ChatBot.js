@@ -180,49 +180,5 @@ export default function ChatBot() {
             </div>
             </div>
         </div>
-
-        // <div id="chat" style={{ display: "block" }}>
-        //     <p>Chatbot goes here!</p>
-        //     <div id="response-text"></div>
-        //     <form onSubmit={handleSubmit}>
-        //         <input
-        //             type="text"
-        //             id="transcription-box"
-        //             placeholder="Type your question"
-        //             className="border-solid rounded border-4 border-black max-w-lg"
-        //             value={userQuestion}
-        //             onChange={(e) => setUserQuestion(e.target.value)}
-        //         />
-        //         <button className="border-solid rounded border-4 border-black max-w-lg" type="submit">Submit</button>
-        //     </form>
-        //     <div>
-        //         <ReactMediaRecorder
-        //             audio
-        //             onStop={handleStop}
-        //             render={({ status, startRecording, stopRecording }) => (
-        //                 <div className="mt-2">
-        //                     {isRecordingText === false ?
-        //                         <button
-        //                             onClick={handleBtnClick}
-        //                             onMouseDown={startRecording}
-        //                             className="bg-green-500 text-lg p-4 rounded-full text-white"
-        //                         >{isRecordingText ? "Stop" : "Recording"}</button> :
-        //                         <button
-        //                             onClick={handleBtnClick}
-        //                             onMouseUp={stopRecording}
-        //                             className="bg-red-700 text-lg p-4 rounded-full text-white"
-        //                         >{isRecordingText ? "Stop" : "Recording"}</button>
-        //                     }
-        //                 </div>
-        //             )}
-        //         />
-        //     </div>
-        //     <div>
-        //         <p className="border-solid border-4 border-black">{aiResponse.text}</p>
-        //     </div>
-        //     <div>
-        //         <audio src={aiResponse.audio} className="appearance-none" controls />
-        //     </div>
-        // </div>
     );
 }

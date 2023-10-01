@@ -1,33 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { BsPlayFill } from "react-icons/bs";
-import { Container, Typography, Button } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Button,
+  Card,
+  CardContent,
+} from "@mui/material";
 import YouTube from "react-youtube";
 
 function VideoDetails() {
   const { videoId } = useParams();
   const [videoData, setVideoData] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState(false);
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
+  const [limitedDescription, setLimitedDescription] = useState("");
 
-  useEffect(() => {
-    // Fetch video data based on videoId (use your backend API endpoint)
-    // fetch(`/course/${videoId}`)
-    fetch(`/course/1`)
-      .then((res) => res.json())
-      .then((data) => setVideoData(data))
-      .catch((error) => {
-        console.error("Error fetching video data: ", error);
-      });
-  }, [videoId]);
-
-  if (!videoData) {
-    return <div>Loading...</div>;
-  }
-
-  // Assuming that videos is an array of video objects
-  const firstVideo = videoData.videos[0]; // You can access individual videos like this
-
-  // Extract the video ID from the URL
   function getYouTubeVideoId(url) {
     const videoIdMatch = url.match(/[?&]v=([^&]+)/);
     if (videoIdMatch) {
@@ -36,13 +24,51 @@ function VideoDetails() {
     return null; // Video ID not found
   }
 
-  const videoIdFromUrl = getYouTubeVideoId(firstVideo.url);
+  useEffect(() => {
+    // Fetch video data based on course clicked)
+    // fetch(`/course/${videoId}`)
+    fetch(`/course/1`)
+      .then((res) => res.json())
+      .then((data) => {
+        setVideoData(data);
 
-  // Limit of 300 characters description
-  const limitedDescription =
-    firstVideo.description.length > 300 && !showFullDescription
-      ? `${firstVideo.description.slice(0, 300)}...`
-      : firstVideo.description;
+        // Set limitedDescription
+        if (data && data.videos && data.videos.length > 0) {
+          const firstVideo = data.videos[0];
+          const initialDescription =
+            firstVideo.description.length > 300 && !showFullDescription
+              ? `${firstVideo.description.slice(0, 300)}...`
+              : firstVideo.description;
+          setLimitedDescription(initialDescription);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching video data: ", error);
+      });
+  }, [videoId, showFullDescription]);
+
+  if (!videoData) {
+    return <div>Loading...</div>;
+  }
+
+  // Function to handle thumbnail click and switch the selected video
+  const handleThumbnailClick = (index) => {
+    setSelectedVideoIndex(index);
+  
+    // Update the description based on the selected video's description
+    const selectedVideo = videoData.videos[index];
+    const updatedDescription =
+      selectedVideo.description.length > 300 && !showFullDescription
+        ? `${selectedVideo.description.slice(0, 300)}...`
+        : selectedVideo.description;
+    setLimitedDescription(updatedDescription);
+  
+    // Scroll to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // You can use "auto" for instant scrolling
+    });
+  };
 
   return (
     <Container maxWidth="md">
@@ -53,7 +79,7 @@ function VideoDetails() {
       <div className="video-container">
         {/* Video Player */}
         <YouTube
-          videoId={videoIdFromUrl} // Use the extracted video ID
+          videoId={getYouTubeVideoId(videoData.videos[selectedVideoIndex].url)} // Use the video URL of the selected video top get the ID DOESNT WORK WITH RAW URL
           opts={{
             width: "100%",
             playerVars: {
@@ -81,7 +107,7 @@ function VideoDetails() {
         </div>
         <Typography variant="body1" className="mt-2">
           {limitedDescription}
-          {firstVideo.description.length > 300 && !showFullDescription && (
+          {limitedDescription.length > 300 && !showFullDescription && (
             <Button
               color="primary"
               onClick={() => setShowFullDescription(true)}
@@ -89,7 +115,7 @@ function VideoDetails() {
               Read more...
             </Button>
           )}
-          {firstVideo.description.length > 300 && showFullDescription && (
+          {limitedDescription.length > 300 && showFullDescription && (
             <Button
               color="primary"
               onClick={() => setShowFullDescription(false)}
@@ -98,6 +124,35 @@ function VideoDetails() {
             </Button>
           )}
         </Typography>
+      </div>
+
+      {/* Section for other videos */}
+      <div>
+        <Typography variant="h5" gutterBottom>
+          Next in this series...
+        </Typography>
+        <div className="video-list">
+          {videoData.videos.map((video, index) => (
+            <Card
+              key={video.id}
+              className="video-card"
+              onClick={() => handleThumbnailClick(index)}
+              style={{ cursor: "pointer" }}
+            >
+              {/* Thumbnail */}
+              <img
+                src={video.pic}
+                alt={video.title}
+                className="video-thumbnail"
+              />
+              <CardContent>
+                <Typography variant="subtitle1">{video.title}</Typography>
+                <Typography variant="body2">{video.creator}</Typography>
+                <Typography variant="body2">{video.description}</Typography>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </Container>
   );

@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import YouTube from "react-youtube";
 import ChatBot from '../components/ChatBot';
+import Loading from '../components/Loading';
 
 function VideoDetails() {
   const { courseId } = useParams();
@@ -50,11 +51,11 @@ function VideoDetails() {
   }, [courseId, showFullDescription]);
 
   if (!videoData) {
-    return <div>Loading...</div>;
+    return <div><Loading /></div>;
   }
 
-  console.log(videoData);
-  console.log(videoData.videos[selectedVideoIndex].id) //to find the videonid for library saves
+  // console.log(videoData);
+  // console.log(videoData.videos[selectedVideoIndex].id) //to find the videonid for library saves
 
   // Function to handle thumbnail click and switch the selected video
   const handleThumbnailClick = (index) => {

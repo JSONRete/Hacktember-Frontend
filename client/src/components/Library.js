@@ -27,7 +27,7 @@ export default function CourseCatalog() {
     <>
     <div style={{ display: "flex", alignItems: "center" }}>
       <div>
-      <h1 className="font-display text-4xl mb-5 mt-20 ml-25 mx-20">Saved Videos</h1>
+      <h1 className="font-display text-6xl mb-5 mt-20 ml-25 mx-20">Saved Videos</h1>
       </div>
       <div className="mb-5 mt-20 ml-25 mx-20" style={{ marginLeft: "auto" }}>
       <Box sx={{ minWidth: 120 }}>

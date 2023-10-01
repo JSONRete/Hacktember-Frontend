@@ -91,7 +91,7 @@ export default function CourseCatalog() {
                   alt={item.title}
                   loading="lazy"
                   style={{ objectFit: "cover", width: "100%", height: "100%" }}
-                  className="hover:animate-pulse"
+                  className="hover:opacity-50"
                 />
                 </Link>
                 <ImageListItemBar
@@ -102,7 +102,7 @@ export default function CourseCatalog() {
                     </span>
                   }
                   subtitle={item.description}
-                  position="below"
+                  position="center"
                 />
               </ImageListItem>
               </div>

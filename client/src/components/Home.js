@@ -48,7 +48,7 @@ function Home() {
               </div>
               <img
                 src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
-                alt="Image"
+                alt="Profile picture or reviewer"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />
               <p className="text-center">5/5 Review</p>
@@ -66,7 +66,7 @@ function Home() {
               </div>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/4/43/Paul_Circle.png"
-                alt="Image"
+                alt="Profile picture or reviewer"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />
               <p className="text-center">5/5 Review</p>
@@ -84,7 +84,7 @@ function Home() {
               </div>
               <img
                 src="https://www.div.digital/wp-content/uploads/testimonial-03.png"
-                alt="Image"
+                alt="Profile picture or reviewer"
                 className="h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4"
               />
               <p className="text-center">5/5 Review</p>

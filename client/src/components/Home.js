@@ -38,16 +38,14 @@ function Home() {
         </div>
 
         <div className="greyReviewDiv h-3/5 bg-[#d3cfc8] w-auto flex flex-col border-t-4 border-black justify-center snap-start">
-          <div className="reviewHolder flex w-full justify-between mt-8 items-center h-full">
+          <div className="reviewHolder flex w-full justify-between mt-8 items-center h-full ">
             <div className="leftOne w-1/3 h-full bg-[#d3cfc8] flex flex-col justify-center items-center p-4 px-8 lg:px-40">
-              <div className="reviewSquare square bg-white p-2 lg:p-4 border-2 border-black">
-                <p className="text-4xl lg:text-center font-bold font-mono p-4">
-                  “I never thought I'd be able to learn Python at my age, but
-                  this online course made it possible! The step-by-step lessons
-                  and patient explanations made the world of programming
-                  accessible to someone like me.”
+              <div className="reviewSquare square bg-white p-2 lg:p-4 border-2 border-black width:200">
+                <p className="text-2xl  lg:text-center font-bold font-mono p-4 w-auto">
+                “I never thought I'd be able to learn Python at my age, but
+                  this online course made it possible!"
                 </p>
-                <p className="text-center font-mono"> - Rome, 67 </p>
+                <p className="text-center font-mono" > - Rome, 67 </p>
               </div>
 
               <div className="profilePicture h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4 relative">
@@ -64,12 +62,10 @@ function Home() {
             </div>
 
             <div className="middleOne w-1/3 h-full bg-[#d3cfc8] flex flex-col justify-center items-center p-4 px-8 lg:px-40">
-              <div className="reviewSquare square bg-white p-2 lg:p-4 border-2 border-black">
-                <p className="text-sm lg:text-center font-bold font-mono p-4">
+              <div className="reviewSquare square bg-white p-2 lg:p-4 border-2 border-black width:200">
+                <p className="text-2xl  lg:text-center font-bold font-mono p-4">
                   “I never thought I'd be able to learn Python at my age, but
-                  this online course made it possible! The step-by-step lessons
-                  and patient explanations made the world of programming
-                  accessible to someone like me.”
+                  this online course made it possible!"
                 </p>
                 <p className="text-center font-mono"> - Lars, 57 </p>
               </div>
@@ -88,12 +84,10 @@ function Home() {
             </div>
 
             <div className="rightOne w-1/3 h-full bg-[#d3cfc8] flex flex-col justify-center items-center p-4 px-8 lg:px-40">
-              <div className="reviewSquare square bg-white p-2 lg:p-4 border-2 border-black">
-                <p className="text-sm lg:text-center font-bold font-mono p-4">
-                  “I never thought I'd be able to learn Python at my age, but
-                  this online course made it possible! The step-by-step lessons
-                  and patient explanations made the world of programming
-                  accessible to someone like me.”
+              <div className="reviewSquare square bg-white p-2 lg:p-4 border-2 border-black width:200">
+                <p className="text-2xl  lg:text-center font-bold font-mono p-4">
+                “I never thought I'd be able to learn Python at my age, but
+                  this online course made it possible!"
                 </p>
                 <p className="text-center font-mono"> - Ayesha, 71 </p>
               </div>

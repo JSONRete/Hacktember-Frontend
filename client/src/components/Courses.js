@@ -82,6 +82,7 @@ export default function CourseCatalog() {
                   marginX: 2,
                   width: `${itemWidth}px`,
                   height: "auto",
+                  marginBottom: 5
                 }}
               >
                 <Link to={`/course/${item.id}`}>

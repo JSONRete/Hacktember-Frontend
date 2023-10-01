@@ -58,7 +58,7 @@ const Register = () => {
     return null;
   }
   return (
-    <Container>
+    <Container className="mb-5">
       <Box mt={5} display="flex" flexDirection="column" alignItems="center">
       <img src="waving-hand.png" alt="hand waving motion" width={300} height={300}/>
         <h4 className="font-display text-6xl mt-5">
@@ -76,6 +76,7 @@ const Register = () => {
             onBlur={formik.handleBlur}
             error={formik.touched.email && Boolean(formik.errors.email)}
             helperText={formik.touched.email && formik.errors.email}
+            className="overlay"
           />
           <TextField
             label="Password"
@@ -92,13 +93,13 @@ const Register = () => {
           />
           <button
             type="submit"
-            className="font-display border-2 p-3 mx-auto mt-3 mb-3 "
+            className="font-display border-2 p-3 mx-auto mt-3 mb-3   "
           >
             {isLoggedIn ? "Login" : "Sign up"}{" "}
           </button>
         </Box>
         <FormControlLabel
-          control={<Switch checked={isLoggedIn} onChange={handleLogin} marginTop="5px"/>}
+          control={<Switch checked={isLoggedIn} onChange={handleLogin} marginBottom="5px"/>}
           label={
             isLoggedIn ? "Don't have an account?" : "Already have an account?"
           }

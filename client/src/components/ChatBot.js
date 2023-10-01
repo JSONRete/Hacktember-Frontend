@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { ReactMediaRecorder } from "react-media-recorder";
-import { GrMicrophone } from "react-icons/gr";
 import { HiOutlineMicrophone } from "react-icons/hi";
 import { VscSend } from "react-icons/vsc";
-// GrMicrophone
-// HiOutlineMicrophone
-
-
 import axios from 'axios';
 
 export default function ChatBot() {
-    // const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [isRecordingText, setIsRecordingText] = useState(false);
     const [transcription, setTranscription] = useState('')
     const [aiResponse, setAiResponse] = useState('')
     const [userTextQuestion, setUserTextQuestion] = useState('')
     const [conversation, setConversation] = useState([]);
 
-    // const createBlobUrl = (aiData) => {
-    //     const blob = new Blob([aiData])
-    //     const url = window.URL.createObjectURL(blob)
-    //     return url
-    // }
 
     // is triggered from recorder which takes in audio blob, converts it to audio file
     // sets up data as form that's sent to openai API
@@ -65,6 +55,7 @@ export default function ChatBot() {
     // takes in state of transcription and sends to elevenlab api
     // returns the AI response as object that includes audio and text  
     const sendTranscript = async (transcript) => {
+        setIsLoading(true)
         console.log(transcript)
         const question = { question: transcript }
         await axios.post(
@@ -77,14 +68,22 @@ export default function ChatBot() {
                     const newAiResponse = res.data
                     const botObj = { role: "bot", content: newAiResponse.text }
                     updateConversation(botObj)
-                // const audio = new Audio()
+                    setAiResponse(newAiResponse.audio)
+                    setIsLoading(false)
+                    
             })
             .catch((error) => {
                 // Handle any errors that occur during the request
                 console.error('Error:', error);
+                setIsLoading(false)
             });
     }
 
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:5555/${aiResponse}`).then(res => console.log(res))
+    }, [aiResponse])
+
+    console.log(aiResponse)
     // handles taking in the text question from user and sends to api
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -112,6 +111,7 @@ export default function ChatBot() {
                             <div>
                                 <span className={`px-4 py-3 rounded-xl inline-block ${message.role === 'bot' ? 'bg-gray-100 text-gray-600 rounded-bl-none' : 'bg-blue-500 text-white rounded-br-none'}`}>
                                     {message.content}
+                                    {message.role === 'bot' ? <audio src={aiResponse} className="appearance-none" controls /> : null}
                                 </span>
                             </div>
                         </div>
@@ -128,13 +128,33 @@ export default function ChatBot() {
                         )}
                     </div>
                 ))}
-                <div className="flex items-end" x-show="botTyping" style={{ display: 'none' }}>
+                {conversation.length === 0 && !isLoading && (<div className="flex items-end" style={{ display: 'none' }}>
                     <div className="flex flex-col space-y-2 text-md leading-tight mx-2 order-2 items-start">
                         <div><img src="https://support.signal.org/hc/article_attachments/360016877511/typing-animation-3x.gif" alt="..." className="w-16 ml-6" /></div>
                     </div>
-                </div>
+                </div>) }
             </div>
-
+            <div id="buttons-container">
+                <div className="">
+                    <div id='record-button'>
+                <ReactMediaRecorder
+                    audio
+                    onStop={handleStop}
+                    render={({ status, startRecording, stopRecording }) => (
+                        <div className="mt-2">
+                            {isRecordingText === false ? 
+                                <button onClick={handleBtnClick} onMouseDown={startRecording}>
+                                    <HiOutlineMicrophone className="text-sky-500 w-6 h-6" />
+                                </button>
+                            : 
+                                <button onClick={handleBtnClick} onMouseUp={stopRecording}>
+                                    <HiOutlineMicrophone  className="animate-pulse text-red-500 w-6 h-6" />
+                                </button>
+                            }
+                        </div>
+                    )}
+                />
+            </div>
             <form onSubmit={handleSubmit} className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
                 <div className="relative flex">
                     <input
@@ -157,36 +177,7 @@ export default function ChatBot() {
                     </div>
                 </div>
             </form>
-            <div className="absolute right-2 items-center inset-y-o flex">
-                <ReactMediaRecorder
-                    audio
-                    onStop={handleStop}
-                    render={({ status, startRecording, stopRecording }) => (
-                        <div className="mt-2">
-                            {isRecordingText === false ? 
-                                <button onClick={handleBtnClick} onMouseDown={startRecording}>
-                                    <HiOutlineMicrophone className="text-sky-500 w-6 h-6" />
-                                </button>
-                            : 
-                                <button onClick={handleBtnClick} onMouseUp={stopRecording}>
-                                    <HiOutlineMicrophone  className="animate-pulse text-red-500 w-6 h-6" />
-                                </button>
-                            }
-                            {/* {isRecordingText === false ?
-                                <button
-                                    onClick={handleBtnClick}
-                                    onMouseDown={startRecording}
-                                    className="bg-green-500 text-lg p-4 rounded-full text-white"
-                                >{isRecordingText ? "Stop" : "Record"}</button> :
-                                <button
-                                    onClick={handleBtnClick}
-                                    onMouseUp={stopRecording}
-                                    className="bg-red-700 text-lg p-4 rounded-full text-white"
-                                >{isRecordingText ? "Stop" : "Record"}</button>
-                            } */}
-                        </div>
-                    )}
-                />
+            </div>
             </div>
         </div>
 
@@ -230,7 +221,7 @@ export default function ChatBot() {
         //         <p className="border-solid border-4 border-black">{aiResponse.text}</p>
         //     </div>
         //     <div>
-        //         <audio src={aiResponse.audio} controls />
+        //         <audio src={aiResponse.audio} className="appearance-none" controls />
         //     </div>
         // </div>
     );

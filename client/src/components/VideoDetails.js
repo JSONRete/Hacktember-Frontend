@@ -76,10 +76,11 @@ function VideoDetails() {
   };
 
   return (
-    <Container maxWidth="md">
+    <div className='container'>
       <div style={{display: 'block', position: 'relative'}}>
         <ChatBot />
       </div>
+    <Container maxWidth="md">
       <Typography variant="h4" gutterBottom>
         {videoData.title}
       </Typography>
@@ -182,6 +183,7 @@ function VideoDetails() {
         </div>
       </div>
     </Container>
+    </div>
   );
 }
 

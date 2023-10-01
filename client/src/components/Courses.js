@@ -41,18 +41,20 @@ export default function CourseCatalog() {
         >
           <Box sx={{ minWidth: 120 }}>
             <FormControl sx={{ minWidth: 250 }}>
-              <InputLabel id="demo-simple-select-label">Difficulty</InputLabel>
+              <InputLabel sx={{ fontSize:22, fontWeight:800 }}color="success" id="demo-simple-select-label">Difficulty</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={difficulty}
                 label="Difficulty"
                 onChange={handleChange}
+                variant='filled'
+                sx={{ fontSize:18, fontWeight:800 }}
               >
-                <MenuItem value="All">All</MenuItem>
-                <MenuItem value="Beginner">Beginner</MenuItem>
-                <MenuItem value="Intermediate">Intermediate</MenuItem>
-                <MenuItem value="Expert">Expert</MenuItem>
+                <MenuItem sx={{ fontSize:18, fontWeight:800 }} value="All">All</MenuItem>
+                <MenuItem sx={{ fontSize:18, fontWeight:800 }} value="Beginner">Beginner</MenuItem>
+                <MenuItem sx={{ fontSize:18, fontWeight:800 }} value="Intermediate">Intermediate</MenuItem>
+                <MenuItem sx={{ fontSize:18, fontWeight:800 }} value="Expert">Expert</MenuItem>
               </Select>
             </FormControl>
           </Box>

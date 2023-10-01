@@ -53,7 +53,7 @@ function VideoDetails() {
     return <div>Loading...</div>;
   }
 
-  console.log(videoData);
+  // console.log(videoData);
   // console.log(videoId)
 
   // Function to handle thumbnail click and switch the selected video

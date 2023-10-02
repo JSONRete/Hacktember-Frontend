@@ -8,6 +8,7 @@ import Contact from '../components/Contact';
 import Register from '../components/Register';
 import About from '../components/About';
 import VideoDetails from '../components/VideoDetails';
+import Library from './Library';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
         <Route path="/video/:videoId" element={<VideoDetails />} />
+        <Route path="/library" element={<Library />}/>
+
       </Routes>
     </Router>
   );

@@ -12,7 +12,7 @@ function Nav() {
       <div className="p-2 flex m-1 justify-start space-x-4">
         <Link
           to="/">
-          <img src="lp-logo.png" alt=" Learnability Pathways Logo"  width={400} height={'auto'}/>
+          <img src="lp-logo.png" alt="Learnability Pathways Logo"  width={400} height={'auto'}/>
         </Link>
         </div>
         <div className="p-8 flex m-5 justify-end space-x-4">

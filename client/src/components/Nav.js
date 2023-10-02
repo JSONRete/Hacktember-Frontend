@@ -9,12 +9,10 @@ function Nav() {
 
   return (
     <div className="relative flex h-16 items-center justify-between">
-      <div className="p-8 flex m-5 justify-start space-x-4">
+      <div className="p-2 flex m-1 justify-start space-x-4">
         <Link
-          to="/"
-          className="text-4xl text-slate-900 font-extrabold hover:text-blue-600 hover:underline font-display"
-        >
-          Learnability Pathways
+          to="/">
+          <img src="lp-logo.png" alt="Learnability Pathways Logo"  width={400} height={'auto'}/>
         </Link>
         </div>
         <div className="p-8 flex m-5 justify-end space-x-4">

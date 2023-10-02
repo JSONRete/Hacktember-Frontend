@@ -3,6 +3,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { BsPlayFill } from "react-icons/bs";
 import Filter from './Filter';
+import ChatBot from './ChatBot';
 
 export default function Courses() {
 
@@ -39,6 +40,9 @@ export default function Courses() {
       <h1 className='font-display text-4xl mb-5 ml-25'>
         Course Catelog
       </h1>
+      <div style={{display: 'block', position: 'relative'}}>
+        <ChatBot />
+      </div>
       <Filter/>
     <div style={{ display: 'flex', justifyContent: 'center'}}>
     <ImageList sx={{ width: 1000, height: 950  }}>

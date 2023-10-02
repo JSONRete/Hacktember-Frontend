@@ -9,6 +9,7 @@ import Register from '../components/Register';
 import About from '../components/About';
 import VideoDetails from '../components/VideoDetails';
 import Library from './Library';
+import ChatBot from '../components/ChatBot';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/video/:videoId" element={<VideoDetails />} />
         <Route path="/library" element={<Library />}/>
-
+        <Route path="/chatbot" element={<ChatBot />} />
       </Routes>
     </Router>
   );

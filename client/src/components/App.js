@@ -7,7 +7,8 @@ import Courses from '../components/Courses';
 import Contact from '../components/Contact';
 import Register from '../components/Register';
 import About from '../components/About';
-import Library from '../components/Library';
+import VideoDetails from '../components/VideoDetails';
+import Library from './Library';
 import ChatBot from '../components/ChatBot';
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
-        <Route path="/library" element={<Library />} />
+        <Route path="/video/:videoId" element={<VideoDetails />} />
+        <Route path="/library" element={<Library />}/>
         <Route path="/chatbot" element={<ChatBot />} />
       </Routes>
     </Router>

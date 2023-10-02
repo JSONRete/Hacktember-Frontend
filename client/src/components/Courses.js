@@ -2,6 +2,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { BsPlayFill } from "react-icons/bs";
+import Filter from './Filter';
 import ChatBot from './ChatBot';
 
 export default function Courses() {
@@ -15,9 +16,10 @@ export default function Courses() {
       description: 'python learning program for brand-new programmers.',
     },
     {
-      img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
       title: 'Learning Python 1-2-3',
-      author: '@rollelflex_graphy726',
+      author: '@helloimnik',
+      description: 'python learning program for brand-new programmers.',
     },
     {
       img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
@@ -41,10 +43,12 @@ export default function Courses() {
       <div style={{display: 'block', position: 'relative'}}>
         <ChatBot />
       </div>
+      <Filter/>
     <div style={{ display: 'flex', justifyContent: 'center'}}>
     <ImageList sx={{ width: 1000, height: 950  }}>
       {itemData.map((item) => (
         <ImageListItem key={item.img} sx={{ marginX: 2}}>
+          <BsPlayFill/>
           <img
             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
             src={`${item.img}?w=248&fit=crop&auto=format`}

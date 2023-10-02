@@ -67,7 +67,7 @@ const Register = () => {
       </span>
       </Link>
       <Box mt={5} display="flex" flexDirection="column" alignItems="center">
-      <img src="waving-hand.png" alt="" width={200} height={200}/>
+      <img src="waving-hand.png" alt="waving hand image" width={200} height={200}/>
         <h4 className="font-display">
           Please Login or Signup!
         </h4>

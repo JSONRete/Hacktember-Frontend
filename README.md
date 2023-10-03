@@ -5,17 +5,17 @@ Visually impaired users, 50 years or older, who are looking to learn Python codi
 
 ## Introduction
 
-Learnability Pathway is an educational platform that combines a Flask API backend with a React frontend. Its primary goal is to empower users with the opportunity to learn Python using free resources sourced from the YouTube API. To enhance accessibility, we harness the capabilities of the OpenAI API and Elevenlabs API."
+Learnability Pathway is an educational platform that combines a _Flask_ API backend with a _React_ frontend. Its primary goal is to empower users with the opportunity to learn Python using free resources sourced from the _YouTube_ API. To enhance accessibility, we harness the capabilities of the _OpenAI_ API and _Elevenlabs_ API."
 
 ## Setup
 
 For the complete app experience, make sure to setup and run both the backend and frontend simultaneity.
 ## Backend file
-Backend - https://github.com/YasmeenY/Hacktember-Backend
+Hacktember-Backend - https://github.com/YasmeenY/Hacktember-Backend
 ## Frontend Setup
 1. Clone to your computer _Hacktember-Frontend_.
-2. Navigate to the frontend directory  __Hacktember-Frontend/client__ and execute __'npm install && npm start.'__
-3. After the starting of frontend and with the backend server up and running, _Learnability Pathways_ is ready for use.
+2. Navigate to the frontend directory  '__Hacktember-Frontend/client__' and execute __'npm install && npm start'.__
+3. After the starting of frontend and with the _[Hacktember-Backend](https://github.com/YasmeenY/Hacktember-Backend)_ server up and running, _Learnability Pathways_ is ready for use.
 ## Usage
 ???????????
 ### Built With
@@ -30,11 +30,12 @@ Backend - https://github.com/YasmeenY/Hacktember-Backend
 ```???
 ???
 ```
-## Dependencies
-```
-tailwindcss
+## Key Dependencies
 
-```
+- [tailwindcss](https://tailwindcss.com/)
+- [Material UI](https://mui.com)
+- [Formik](https://formik.org/)
+- [yup](https://github.com/jquense/yup)
 ## Contributors
 Project Manager:
 

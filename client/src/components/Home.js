@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -26,9 +27,12 @@ function Home() {
             </div>
 
             <div className="flex justify-center">
-              <button className="form-button text-xl lg:text-3xl bg-[#000000] text-white px-4 lg:px-8 lg:py-4 lg:w-48">
+              <Link
+                to="/courses"
+                className="form-button text-center text-xl lg:text-3xl bg-[#000000] text-white px-4 lg:px-8 lg:py-4 lg:w-48"
+              >
                 Get Started
-              </button>
+              </Link>
             </div>
             {/* make this go to the signup page. if logged in go to library */}
           </div>
@@ -68,7 +72,7 @@ function Home() {
                   and patient explanations made the world of programming
                   accessible to someone like me.”
                 </p>
-                <p className="text-center"> - Lars, 76 </p>
+                <p className="text-center"> - Lars, 57 </p>
               </div>
 
               <div className="profilePicture h-10 lg:h-20 w-10 lg:w-20 mt-2 lg:mt-4 relative">
@@ -107,10 +111,6 @@ function Home() {
               <p className="text-center">5/5 Review</p>
             </div>
           </div>
-        </div>
-
-        <div className="snap-start w-auto h-20 lg:h-20 overflow-scroll">
-          <p className="text-center"> footer?</p>
         </div>
       </div>
     </section>

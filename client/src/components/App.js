@@ -23,7 +23,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
-        <Route path="/video/:videoId" element={<VideoDetails />} />
+        <Route path="/course/:courseId" element={<VideoDetails />} />
+        <Route path="/coursetest" element={<VideoDetails />} />
         <Route path="/library" element={<Library />}/>
         <Route path="/chatbot" element={<ChatBot />} />
       </Routes>

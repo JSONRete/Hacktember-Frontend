@@ -10,7 +10,7 @@ import {
 import YouTube from "react-youtube";
 
 function VideoDetails() {
-  const { videoId } = useParams();
+  const { courseId } = useParams();
   const [videoData, setVideoData] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
@@ -26,8 +26,9 @@ function VideoDetails() {
 
   useEffect(() => {
     // Fetch video data based on course clicked)
-    // fetch(`/course/${videoId}`)
-    fetch(`/course/1`)
+    // fetch(`course/1`) IF LAUNCHING BACKEND WITH PYTHON APP.PY
+    // fetch(`http://127.0.0.1:5000/course/1`) IF BACKEND IS FLASK RUN
+    fetch(`/course/${courseId}`)
       .then((res) => res.json())
       .then((data) => {
         setVideoData(data);
@@ -45,11 +46,14 @@ function VideoDetails() {
       .catch((error) => {
         console.error("Error fetching video data: ", error);
       });
-  }, [videoId, showFullDescription]);
+  }, [courseId, showFullDescription]);
 
   if (!videoData) {
     return <div>Loading...</div>;
   }
+
+  console.log(videoData);
+  // console.log(videoId)
 
   // Function to handle thumbnail click and switch the selected video
   const handleThumbnailClick = (index) => {

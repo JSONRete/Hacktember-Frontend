@@ -11,9 +11,9 @@ ReactDOM.render(
   <React.StrictMode>
     <ErrorProvider>
       <ContentProvider>
-      <UserProvider>
-        <App />
-      </UserProvider>
+        <UserProvider>
+          <App />
+        </UserProvider>
       </ContentProvider>
     </ErrorProvider>
   </React.StrictMode>,

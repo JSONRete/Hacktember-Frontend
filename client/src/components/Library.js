@@ -1,68 +1,85 @@
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
+import React, { useState, useContext} from "react";
+import { ContentContext } from "../context/ContentProvider";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 import { BsPlayFill } from "react-icons/bs";
 
-export default function Courses() {
+export default function CourseCatalog() {
+  const { course, handleCourse } = useContext(ContentContext);
+  const [difficulty, setDifficulty] = useState("All");
 
-  const playbutton = <BsPlayFill/>
-  const itemData = [
-    {
-      img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-      title: 'Learning Python 1-2-3',
-      author: '@bkristastucchio',
-      description: 'python learning program for brand-new programmers.',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-      title: 'Learning Python 1-2-3',
-      author: '@helloimnik',
-      description: 'python learning program for brand-new programmers.',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-      title: 'Learning Python 1-2-3',
-      author: '@helloimnik',
-      description: 'python learning program for brand-new programmers.',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-      title: 'Learning Python 1-2-3',
-      author: '@nolanissac',
-      description: 'python learning program for brand-new programmers.',
-    },
-  ];
+  const handleChange = (event) => {
+    const selectedDifficulty = event.target.value;
+    setDifficulty(selectedDifficulty);
+    const filteredCourses = course.filter(
+      (course) => course.difficulty === selectedDifficulty
+    );
+    handleCourse(filteredCourses);
+  };
 
   return (
-    <div>
-      <h1 className='font-display text-4xl mb-5 ml-25'>
-        Course Catelog
-      </h1>
-    <div style={{ display: 'flex', justifyContent: 'center'}}>
-    <ImageList sx={{ width: 1000, height: 950  }}>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img} sx={{ marginX: 2}}>
-          <img
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <ImageListItemBar
-          sx={{ marginY: 5}}
-            title={<span>{item.title}  | Author: {item.author}</span>}
-            subtitle={item.description}         position="below"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
-    </div>
-    </div>
+    <>
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <div>
+      <h1 className="font-display text-4xl mb-5 mt-20 ml-25 mx-20">Saved Videos</h1>
+      </div>
+      <div className="mb-5 mt-20 ml-25 mx-20" style={{ marginLeft: "auto" }}>
+      <Box sx={{ minWidth: 120 }}>
+        <FormControl sx={{ minWidth: 250 }}>
+          <InputLabel id="demo-simple-select-label">Difficulty</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={difficulty}
+            label="Difficulty"
+            onChange={handleChange}
+          >
+            <MenuItem value="All">All</MenuItem>
+            <MenuItem value="Beginner">Beginner</MenuItem>
+            <MenuItem value="Intermediate">Intermediate</MenuItem>
+            <MenuItem value="Expert">Expert</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+      </div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <ImageList sx={{ width: 1000, height: 950 }}>
+          {course
+            .filter(
+              (item) => difficulty === "All" || item.difficulty === difficulty
+            )
+            .map((item) => (
+              <ImageListItem
+                key={item.course_image}
+                sx={{ marginX: 2, width: 450, height: 200 }}
+              >
+                <img
+                  srcSet={`${item.course_image}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${item.course_image}?w=248&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+                <ImageListItemBar
+                  sx={{ marginY: 5 }}
+                  title={
+                    <span>
+                      {item.title} | Creator: {item.creator}
+                    </span>
+                  }
+                  subtitle={item.description}
+                  position="below"
+                />
+              </ImageListItem>
+            ))}
+        </ImageList>
+      </div>
+      </>
   );
 }
-
-
-
-
-
-

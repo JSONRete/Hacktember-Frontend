@@ -15,22 +15,21 @@ function Home() {
           ></div>
 
           <div className="rightSide w-1/2 bg-[#ffffff] flex flex-col justify-center snap-start border-l-4 border-black">
-            <h1 className="text-6xl lg:text-8xl font-extrabold mt-10 lg:mt-40 text-center px-4 lg:px-28">
+            <h1 className="text-6xl lg:text-8xl font-extrabold mt-10 lg:mt-10 text-center px-4 lg:px-28">
               Learn Python At Any Age
             </h1>
 
             <div className="text-container">
-              <p className="text-2xl lg:text-4xl font-bold mt-4 lg:mt-20 text-center pb-4 lg:pb-8">
+            <p className="text-lg lg:text-xl xl:text-2xl font-bold mt-4 lg:mt-8 text-center lg:pb-8">
                 Join thousands of other seniors who taught themselves to code
                 with our free resources!
               </p>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-2">
               <Link
                 to="/courses"
-                className="form-button text-center text-xl lg:text-3xl bg-[#000000] text-white px-4 lg:px-8 lg:py-4 lg:w-48"
-              >
+                className="form-button text-center text-lg lg:text-xl bg-[#000000] text-white px-4 lg:px-6 py-2 lg:py-4 lg:w-48"              >
                 Get Started
               </Link>
             </div>

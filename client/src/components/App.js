@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Nav from '../components/Nav';
-import Home from '../components/Home'; // Import your route components here
+import Home from '../components/Home';
 import Courses from '../components/Courses';
 import Contact from '../components/Contact';
 import Register from '../components/Register';
@@ -10,6 +10,8 @@ import About from '../components/About';
 import VideoDetails from '../components/VideoDetails';
 import Library from './Library';
 import ChatBot from '../components/ChatBot';
+import Footer from '../components/Footer'; 
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Route path="/library" element={<Library />}/>
         <Route path="/chatbot" element={<ChatBot />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

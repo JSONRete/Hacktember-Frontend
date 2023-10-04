@@ -65,6 +65,7 @@ export default function CourseCatalog() {
                   src={`${item.course_image}?w=248&fit=crop&auto=format`}
                   alt={item.title}
                   loading="lazy"
+                  className="hover:animate-pulse"
                 />
                 <ImageListItemBar
                   sx={{ marginY: 5 }}

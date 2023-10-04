@@ -13,7 +13,11 @@ function Nav() {
         <Link
           to="/">
           <img className='logo' src={process.env.PUBLIC_URL + "/lp-logo.png"} alt="Learnability Pathways Logo"  width={400} height={'auto'}/>
+        favorites
+        </Link>
+
       </Link>
+        main
         </div>
         <div className="p-8 flex m-5 justify-end space-x-4">
         <Link className={links} to="/">

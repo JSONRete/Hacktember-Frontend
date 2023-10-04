@@ -142,7 +142,7 @@ export default function ChatBot() {
                             onStop={handleStop}
                             render={({ status, startRecording, stopRecording }) => (
                                 <div className="mt-2">
-                                    {isRecordingText === false ?
+                                    {isRecordingText === false && status !== 'recording' ?
                                         <button onClick={handleBtnClick} onMouseDown={startRecording}>
                                             <HiOutlineMicrophone className="text-sky-500 w-6 h-6" />
                                         </button>
@@ -155,7 +155,7 @@ export default function ChatBot() {
                             )}
                         />
                     </div>
-                    <form onSubmit={handleSubmit} className="border-t-2 border-gray-200 px-4 pt-4 mb-4 sm:mb-0 sticky bottom-0 z-1">
+                    <form onSubmit={handleSubmit} className="border-t-2 border-gray-200 px-4 pt-4 mb-4 sm:mb-0">
                         <div className="relative flex">
                             <input
                                 type="text"

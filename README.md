@@ -37,18 +37,18 @@ As you embark on your _Python_ learning adventure, don't hesitate to throw any _
 ## Contributors
 Project Manager:
 
-- Sheena Sang - https://github.com/sheenasany
+- Sheena Sang - [github.com/sheenasany](https://github.com/sheenasany)
   
 Product Design Team:
 - Colin Robison - [colinrobison.design](https://colinrobison.format.com/) 
 - Helen Phelan-Guillemot - [helenpgdesign.com](https://helenpgdesign.com/) 
 
 Backend Team:
-- Yasmeen Yousef - https://github.com/YasmeenY
-- Denis Kadrich - https://github.com/Dev4long
+- Yasmeen Yousef - [github.com/YasmeenY](https://github.com/YasmeenY)
+- Denis Kadrich - [github.com/Dev4long](https://github.com/Dev4long)
 
 Frontend Team:
-- Justin Elue - https://github.com/Osimiri
-- Ryan Salvato - https://github.com/salvat36
-- JaSON Rete - https://github.com/JSONRete
-- Sheena Sang - https://github.com/sheenasany
+- Justin Elue - [github.com/Osimiri](https://github.com/Osimiri)
+- Ryan Salvato - [github.com/salvat36](https://github.com/salvat36)
+- JaSON Rete - [github.com/JSONRete](https://github.com/JSONRete)
+- Sheena Sang - [github.com/sheenasany](https://github.com/sheenasany)

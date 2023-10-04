@@ -17,7 +17,7 @@ Hacktember-Backend - https://github.com/YasmeenY/Hacktember-Backend
 2. Navigate to the frontend directory  '__Hacktember-Frontend/client__' and execute __'npm install && npm start'.__
 3. After the starting of frontend and with the _[Hacktember-Backend](https://github.com/YasmeenY/Hacktember-Backend)_ server up and running, _Learnability Pathways_ is ready for use.
 ## Usage
-As you embark on your Python learning adventure, don't hesitate to throw any _[Python](https://www.python.org/)_ related questions at our chatbot __AI__! Whether you're typing or talking, we've got your back—ask away, and you'll get back a response in text or a friendly voice!
+As you embark on your _Python_ learning adventure, don't hesitate to throw any _[Python](https://www.python.org/)_ related questions at our chatbot __AI__! Whether you're typing or talking, we've got your back—ask away, and you'll get back a response in text or a friendly voice!
 ### Built With
 [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
 ### Prerequisites
@@ -34,22 +34,21 @@ As you embark on your Python learning adventure, don't hesitate to throw any _[P
 - [yup](https://github.com/jquense/yup)
 - [react-media-recorder 🅾️ 📹 🎤 💻](https://github.com/DeltaCircuit/react-media-recorder)
 - [AXIOS](https://axios-http.com/docs/example)
-- [TypeIt](https://www.typeitjs.com/)
 ## Contributors
 Project Manager:
 
-- Sheena Sang - https://github.com/sheenasany
+- Sheena Sang - [github.com/sheenasany](https://github.com/sheenasany)
   
 Product Design Team:
 - Colin Robison - [colinrobison.design](https://colinrobison.format.com/) 
 - Helen Phelan-Guillemot - [helenpgdesign.com](https://helenpgdesign.com/) 
 
 Backend Team:
-- Yasmeen Yousef - https://github.com/YasmeenY
-- Denis Kadrich - https://github.com/Dev4long
+- Yasmeen Yousef - [github.com/YasmeenY](https://github.com/YasmeenY)
+- Denis Kadrich - [github.com/Dev4long](https://github.com/Dev4long)
 
 Frontend Team:
-- Justin Elue - https://github.com/Osimiri
-- Ryan Salvato - https://github.com/salvat36
-- JaSON Rete - https://github.com/JSONRete
-- Sheena Sang - https://github.com/sheenasany
+- Justin Elue - [github.com/Osimiri](https://github.com/Osimiri)
+- Ryan Salvato - [github.com/salvat36](https://github.com/salvat36)
+- JaSON Rete - [github.com/JSONRete](https://github.com/JSONRete)
+- Sheena Sang - [github.com/sheenasany](https://github.com/sheenasany)

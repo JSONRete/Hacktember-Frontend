@@ -17,7 +17,7 @@ Hacktember-Backend - https://github.com/YasmeenY/Hacktember-Backend
 2. Navigate to the frontend directory  '__Hacktember-Frontend/client__' and execute __'npm install && npm start'.__
 3. After the starting of frontend and with the _[Hacktember-Backend](https://github.com/YasmeenY/Hacktember-Backend)_ server up and running, _Learnability Pathways_ is ready for use.
 ## Usage
-As you embark on your Python learning adventure, don't hesitate to throw any _[Python](https://www.python.org/)_ related questions at our chatbot __AI__! Whether you're typing or talking, we've got your back—ask away, and you'll get back a response in text or a friendly voice!
+As you embark on your _Python_ learning adventure, don't hesitate to throw any _[Python](https://www.python.org/)_ related questions at our chatbot __AI__! Whether you're typing or talking, we've got your back—ask away, and you'll get back a response in text or a friendly voice!
 ### Built With
 [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
 ### Prerequisites
@@ -34,7 +34,6 @@ As you embark on your Python learning adventure, don't hesitate to throw any _[P
 - [yup](https://github.com/jquense/yup)
 - [react-media-recorder 🅾️ 📹 🎤 💻](https://github.com/DeltaCircuit/react-media-recorder)
 - [AXIOS](https://axios-http.com/docs/example)
-- [TypeIt](https://www.typeitjs.com/)
 ## Contributors
 Project Manager:
 

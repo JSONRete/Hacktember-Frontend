@@ -8,7 +8,6 @@ import {
   CardContent,
 } from "@mui/material";
 import YouTube from "react-youtube";
-import ChatBot from "../components/ChatBot"
 
 function VideoDetails() {
   const { courseId } = useParams();
@@ -53,8 +52,8 @@ function VideoDetails() {
     return <div>Loading...</div>;
   }
 
-  // console.log(videoData);
-  // console.log(videoId)
+  console.log(videoData);
+  console.log(videoData.videos[selectedVideoIndex].id) //to find the videonid for library saves
 
   // Function to handle thumbnail click and switch the selected video
   const handleThumbnailClick = (index) => {
@@ -97,7 +96,6 @@ function VideoDetails() {
           }}
         />
       </div>
-
       {/* Description Box */}
       <div
         className="description-container border-2 border-slate-900 px-4 py-2"

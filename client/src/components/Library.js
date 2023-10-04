@@ -31,21 +31,7 @@ export default function CourseCatalog() {
       </div>
       <div className="mb-5 mt-20 ml-25 mx-20" style={{ marginLeft: "auto" }}>
       <Box sx={{ minWidth: 120 }}>
-        <FormControl sx={{ minWidth: 250 }}>
-          <InputLabel id="demo-simple-select-label">Difficulty</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={difficulty}
-            label="Difficulty"
-            onChange={handleChange}
-          >
-            <MenuItem value="All">All</MenuItem>
-            <MenuItem value="Beginner">Beginner</MenuItem>
-            <MenuItem value="Intermediate">Intermediate</MenuItem>
-            <MenuItem value="Expert">Expert</MenuItem>
-          </Select>
-        </FormControl>
+        
       </Box>
       </div>
       </div>
@@ -65,6 +51,7 @@ export default function CourseCatalog() {
                   src={`${item.course_image}?w=248&fit=crop&auto=format`}
                   alt={item.title}
                   loading="lazy"
+                  className="hover:animate-pulse"
                 />
                 <ImageListItemBar
                   sx={{ marginY: 5 }}

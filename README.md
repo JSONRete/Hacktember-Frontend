@@ -5,7 +5,7 @@ Visually impaired users, 50 years or older, who are looking to learn Python codi
 
 ## Introduction
 
-Learnability Pathway is an educational platform that combines a _Flask_ API backend with a _React_ frontend. Its primary goal is to empower users with the opportunity to learn Python using free resources sourced from the _YouTube_ API. To enhance accessibility, we harness the capabilities of the _OpenAI_ API and _Elevenlabs_ API."
+Learnability Pathway is an educational platform that combines a _Flask_ API backend with a _React_ frontend. Its primary goal is to empower users with the opportunity to learn Python using free resources sourced from the _YouTube_ API. To enhance accessibility, we harness the capabilities of the _OpenAI_ API and _Elevenlabs_ API.
 
 ## Setup
 
@@ -13,29 +13,28 @@ For the complete app experience, make sure to setup and run both the backend and
 ## Backend file
 Hacktember-Backend - https://github.com/YasmeenY/Hacktember-Backend
 ## Frontend Setup
-1. Clone to your computer _Hacktember-Frontend_.
+1. Clone to your computer our _Hacktember-Frontend_.
 2. Navigate to the frontend directory  '__Hacktember-Frontend/client__' and execute __'npm install && npm start'.__
 3. After the starting of frontend and with the _[Hacktember-Backend](https://github.com/YasmeenY/Hacktember-Backend)_ server up and running, _Learnability Pathways_ is ready for use.
 ## Usage
-???????????
+As you embark on your Python learning adventure, don't hesitate to throw any _[Python](https://www.python.org/)_ related questions at our chatbot __AI__! Whether you're typing or talking, we've got your back—ask away, and you'll get back a response in text or a friendly voice!
 ### Built With
-???, ???,???, ???,???, ???
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
 ### Prerequisites
-```???
-???
-```
-```???
-???
-```
-```???
-???
-```
-## Key Dependencies
 
+- [Node.js®](https://nodejs.org)
+- [npm](https://www.npmjs.com/)
+- Your favorite [text editor environment](https://en.wikipedia.org/wiki/List_of_text_editors).
+
+## Packages
+- [React](https://react.dev/)
 - [tailwindcss](https://tailwindcss.com/)
 - [Material UI](https://mui.com)
 - [Formik](https://formik.org/)
 - [yup](https://github.com/jquense/yup)
+- [react-media-recorder 🅾️ 📹 🎤 💻](https://github.com/DeltaCircuit/react-media-recorder)
+- [AXIOS](https://axios-http.com/docs/example)
+- [TypeIt](https://www.typeitjs.com/)
 ## Contributors
 Project Manager:
 

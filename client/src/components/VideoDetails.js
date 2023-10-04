@@ -53,6 +53,7 @@ function VideoDetails() {
   }
 
   console.log(videoData);
+  console.log(videoData.videos[selectedVideoIndex].id) //to find the videonid for library saves
   // console.log(videoId)
 
   // Function to handle thumbnail click and switch the selected video
@@ -92,7 +93,6 @@ function VideoDetails() {
           }}
         />
       </div>
-
       {/* Description Box */}
       <div
         className="description-container border-2 border-slate-900 px-4 py-2"

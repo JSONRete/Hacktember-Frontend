@@ -19,7 +19,11 @@ Hacktember-Backend - https://github.com/YasmeenY/Hacktember-Backend
 ## Usage
 As you embark on your _Python_ learning adventure, don't hesitate to throw any _[Python](https://www.python.org/)_ related questions at our chatbot __AI__! Whether you're typing or talking, we've got your back—ask away, and you'll get back a response in text or a friendly voice!
 ### Built With
-[JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
+
+- JavaScript
+- [React](https://react.dev/)
+- [tailwindcss](https://tailwindcss.com/)
+- [Material UI](https://mui.com)
 ### Prerequisites
 
 - [Node.js®](https://nodejs.org)
@@ -27,9 +31,7 @@ As you embark on your _Python_ learning adventure, don't hesitate to throw any _
 - Your favorite [text editor environment](https://en.wikipedia.org/wiki/List_of_text_editors).
 
 ## Packages
-- [React](https://react.dev/)
-- [tailwindcss](https://tailwindcss.com/)
-- [Material UI](https://mui.com)
+
 - [Formik](https://formik.org/)
 - [yup](https://github.com/jquense/yup)
 - [react-media-recorder 🅾️ 📹 🎤 💻](https://github.com/DeltaCircuit/react-media-recorder)

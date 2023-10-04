@@ -31,7 +31,7 @@ export default function CourseCatalog() {
     <>
       <div style={{ display: "flex", alignItems: "center", marginBottom: '10px' }}>
         <div>
-          <h1 className="font-display text-4xl mb-5 mt-20 ml-25 mx-20">
+          <h1 className="font-display text-6xl mb-5 mt-20 ml-25 mx-20">
             Course Catalog
           </h1>
         </div>
@@ -91,18 +91,18 @@ export default function CourseCatalog() {
                   alt={item.title}
                   loading="lazy"
                   style={{ objectFit: "cover", width: "100%", height: "100%" }}
-                  className="hover:animate-pulse"
+                  className="hover:opacity-50"
                 />
                 </Link>
                 <ImageListItemBar
-                  sx={{ marginBottom: '2px' }}
+                  sx={{ marginBottom: '16px', fontSize:36, fontWeight:700 }}
                   title={
                     <span>
                       {item.title} | Creator: {item.creator}
                     </span>
                   }
                   subtitle={item.description}
-                  position="below"
+                  position="center"
                 />
               </ImageListItem>
               </div>

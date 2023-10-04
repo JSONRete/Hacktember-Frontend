@@ -1,13 +1,11 @@
 import React from "react";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import { UserContext } from "../context/UserProvider";
 import { ErrorContext } from "../context/ErrorProvider";
-
-import { IoIosArrowBack } from "react-icons/io";
 
 import {
   Box,
@@ -51,7 +49,7 @@ const Register = () => {
       resetForm();
       const ok = handleRegister(values);
       if (ok) {
-        history("/");
+        history.push("/");
       }
     },
   });
@@ -61,20 +59,15 @@ const Register = () => {
   }
   return (
     <Container>
-      <Link>
-      <span className="font-display">
-      <IoIosArrowBack/>Back
-      </span>
-      </Link>
       <Box mt={5} display="flex" flexDirection="column" alignItems="center">
-      <img src="waving-hand.png" alt="waving hand image" width={200} height={200}/>
-        <h4 className="font-display">
-          Please Login or Signup!
+      <img src="waving-hand.png" alt="hand waving motion" width={300} height={300}/>
+        <h4 className="font-display text-6xl mt-5">
+        {isLoggedIn ? "Log in to your Account" : "Create your account"}
         </h4>
-        <Box component="form" onSubmit={formik.handleSubmit} width="25%">
+        <Box component="form" onSubmit={formik.handleSubmit} width="25%" display="flex" flexDirection="column" alignItems="center" marginTop={3}>
           <TextField
             label="Email"
-            variant="outlined"
+            variant="filled"
             fullWidth
             margin="normal"
             name="email"
@@ -86,7 +79,7 @@ const Register = () => {
           />
           <TextField
             label="Password"
-            variant="outlined"
+            variant="filled"
             fullWidth
             margin="normal"
             name="password"
@@ -99,14 +92,13 @@ const Register = () => {
           />
           <button
             type="submit"
-
-            className="font-display"
+            className="font-display border-2 p-3 mx-auto mt-3 mb-3 "
           >
             {isLoggedIn ? "Login" : "Sign up"}{" "}
           </button>
         </Box>
         <FormControlLabel
-          control={<Switch checked={isLoggedIn} onChange={handleLogin} />}
+          control={<Switch checked={isLoggedIn} onChange={handleLogin} marginTop="5px"/>}
           label={
             isLoggedIn ? "Don't have an account?" : "Already have an account?"
           }

@@ -8,6 +8,7 @@ import {
   CardContent,
 } from "@mui/material";
 import YouTube from "react-youtube";
+import ChatBot from '../components/ChatBot';
 
 function VideoDetails() {
   const { courseId } = useParams();

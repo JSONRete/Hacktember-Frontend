@@ -54,7 +54,6 @@ function VideoDetails() {
 
   console.log(videoData);
   console.log(videoData.videos[selectedVideoIndex].id) //to find the videonid for library saves
-  // console.log(videoId)
 
   // Function to handle thumbnail click and switch the selected video
   const handleThumbnailClick = (index) => {
@@ -76,6 +75,10 @@ function VideoDetails() {
   };
 
   return (
+    <div className='container'>
+      <div style={{display: 'block', position: 'relative', height: '500px', overflow: 'auto'}}>
+        <ChatBot />
+      </div>
     <Container maxWidth="md">
       <Typography variant="h4" gutterBottom>
         {videoData.title}
@@ -178,6 +181,7 @@ function VideoDetails() {
         </div>
       </div>
     </Container>
+    </div>
   );
 }
 
